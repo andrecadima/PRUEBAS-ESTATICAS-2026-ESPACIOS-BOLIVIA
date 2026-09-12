@@ -1,0 +1,53 @@
+<div class = "permisoevento-container">
+    <head>
+        <div class="fondooscuro">
+            <header>
+              <div class="logo">ESPACIOS BOLIVIA</div>
+                <!-- Menú principal centrado -->
+                <ul class="navegacion">
+                  <li><button  id="inicio"  (click)="goToBienvenido()">INICIO</button></li>
+                  <li><button  (click)="goToCalendario()">CALENDARIO</button></li>
+                  <li><button  (click)="goToMapa()">MAPA</button></li>
+                  <!--<li><a href="#" (click)="goToMapa()">MAPA</a></li>-->
+                </ul>
+                <!-- nombre de usuario -->
+                <div class="right-section">
+                  <ul class="extra-menu">
+                    <li class="user-menu">
+                      <a class="user-link" (click)="toggleDropdown()">
+                        <img src="/assets/usuario.png" alt="Icono Usuario" class="user-icon" />
+                        <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                          {{usuario.nombre}}
+                        </span>
+                      </a>
+                      <!-- Dropdown con la información -->
+                      <div class="user-menu" (click)="toggleDropdown()">
+                        <i class="fa fa-caret-down"></i>
+                      </div>
+                      
+                      <div class="user-dropdown" [class.open]="isDropdownOpen">
+                        <ul>
+                          <li><a (click)="logout()">Cerrar sesión</a></li>
+                        </ul>
+                      </div>                
+                    </li>
+                  </ul>
+                  <div class="halloween"></div>
+                </div>          
+            </header>
+          </div>
+    </head>
+    <body>
+            <div class="container">
+                <section class="info">
+                    <h1>Información sobre los Tipos de Eventos y sus Permisos</h1>
+                    <embed src="/assets/reglamento.pdf" width="900" height="680" type="application/pdf">
+                </section>
+                <section class="button-container">
+                    <button class="button"  (click)="goToBienvenido()">Volver a Reserva</button>
+                </section>
+            </div>
+        
+    </body>           
+</div>  
+

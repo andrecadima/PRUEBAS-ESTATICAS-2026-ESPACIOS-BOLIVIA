@@ -1,0 +1,474 @@
+/* Reset y configuración inicial */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Fondo de la página */
+.fondo {
+    background-color: black;
+    width: 100%;
+    height: 100vh; /* Altura completa de la pantalla */
+}
+
+.fondooscuro {
+    background-color: black;
+    padding: 20px;
+}
+
+/* Header */
+header {
+  width: 100%;
+  padding: 5px 0;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Logotipo y nombre */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 30px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.navegacion {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 25px;
+  margin-right: 30px;
+}
+
+.navegacion button {
+  background-color: black; 
+  border: none; 
+  color: white; 
+  font-size: 16px;
+}
+
+#inicio {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.navegacion a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s;
+}
+
+
+.navegacion a:hover {
+  color: rgb(193, 185, 223);
+}
+
+
+
+/* Menú principal */
+/* Sección derecha: Inicio de sesión y botón */
+.right-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #000;
+  padding: 10px;
+}
+
+.extra-menu {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.extra-menu li {
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.extra-menu li:hover {
+  background-color: #444;
+}
+
+.extra-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Enlace de usuario */
+.user-menu {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.user-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.user-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Dropdown oculto por defecto */
+.user-dropdown {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 100%; /* Position below the button */
+  left: 0;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.user-dropdown.open {
+  display: block; /* Display when the dropdown is open */
+}
+
+/* Botón de logout */
+.logout-btn {
+  display: block;
+  background-color: #ff4b4b;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+.logout-btn:hover {
+  background-color: #e03d3d;
+}
+  
+.icono-usuario {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.estado-pendiente {
+    color: red;
+    font-weight: bold;
+}
+  
+.estado-confirmado {
+    color: green;
+    font-weight: bold;
+}
+ 
+  
+.halloween {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+/* Botón de registro */
+.buy-tickets button {
+    background-color: #ff9f00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-tickets button:hover {
+    background-color: #e87e00;
+}
+
+.bienvenido {
+    color: white;
+    padding: 20px;
+    margin-left: 50px; /* Margen izquierdo */
+    margin-right: 50px; /* Margen derecho */
+}
+
+.bienvenido h1 {
+    text-align: left; /* Alinea el título a la izquierda */
+    margin-bottom: 20px;
+}
+
+.bienvenido p {
+    text-align: left; /* Alinea los párrafos a la izquierda */
+    margin-bottom: 10px;
+}
+
+/* Contenedor de tarjetas */
+.evento-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center; 
+    margin-top: 30px; 
+}
+
+.evento-card {
+    flex: 1 1 calc(33.333% - 30px); 
+    max-width: calc(33.333% - 30px);
+    border: none; 
+    border-radius: 12px; 
+    padding: 20px;
+    background-color: #1e1e1e; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;    
+}
+  
+  .evento-card:hover {
+    transform: translateY(-8px); /* Elevar al pasar el mouse */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Aumentar la sombra */
+  }
+
+  /* Imagen del evento */
+.evento-imagen {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px; 
+    margin-bottom: 15px; 
+}
+
+  
+  .evento-card h3 {
+    margin: 10px 0; 
+    font-size: 20px; 
+    color: #fff;
+    text-align: center; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+  }
+  
+  .evento-card p {
+    margin: 6px 0; 
+    color: #d3d3d3; 
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .no-eventos-message {
+    text-align: center; /* Centrar el texto */
+    color: #888; /* Texto gris claro */
+    font-size: 18px; /* Tamaño del texto */
+    margin-top: 24px; /* Separación superior */
+  }
+/*MODAL*/
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Más opacidad para mayor contraste */
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .modal-content {
+    background: #ffffff; /* Blanco puro para contraste */
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px; /* Limitar el ancho en pantallas grandes */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    position: relative;
+    animation: slideIn 0.4s ease-out;
+    text-align: center; /* Alinear texto y contenido */
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Color neutro */
+    transition: color 0.3s ease;
+  }
+  
+  .close:hover {
+    color: #ff4c4c; /* Resaltar al pasar el cursor */
+  }
+  
+  .modal-content h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .modal-content textarea {
+    width: 100%;
+    height: 100px;
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: none;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .modal-content textarea:focus {
+    outline: none;
+    border-color: #4caf50; /* Verde al enfocar */
+  }
+  
+  .estrellas {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 5px; /* Espacio entre estrellas */
+  }
+  
+  .estrellas label {
+    font-size: 1.5rem;
+    color: #ddd; /* Color apagado por defecto */
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .estrellas input[type="radio"] {
+    display: none; /* Ocultar inputs */
+  }
+  
+  .estrellas input[type="radio"]:checked ~ label {
+    color: #ffc107; /* Color amarillo para estrellas seleccionadas */
+  }
+  
+  .estrellas label:hover,
+  .estrellas label:hover ~ label {
+    color: #ffdb58; /* Color más claro al pasar el cursor */
+  }
+  
+  .modal-content button {
+    background-color: #4caf50; /* Verde moderno */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-content button:hover {
+    background-color: #45a049; /* Más oscuro al pasar el cursor */
+  }
+  
+    /* Estilo base del botón */
+    button {
+        background-color: #007bff; /* Color de fondo azul */
+        color: white; /* Texto blanco */
+        padding: 10px 20px; /* Espaciado interno */
+        font-size: 16px; /* Tamaño de fuente */
+        font-weight: bold; /* Negrita */
+        border: none; /* Sin borde */
+        border-radius: 8px; /* Bordes redondeados */
+        cursor: pointer; /* Cursor de mano */
+        transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    }
+
+    /* Estilo cuando el botón está en hover */
+    button:hover {
+        background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+        transform: translateY(-2px); /* Efecto de elevación */
+    }
+
+    /* Estilo cuando el botón está en foco (cuando se hace clic) */
+    button:focus {
+        outline: none; /* Eliminar borde por defecto */
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra de enfoque */
+    }
+
+    /* Estilo cuando el botón está deshabilitado */
+    button:disabled {
+        background-color: #d6d6d6; /* Fondo gris */
+        cursor: not-allowed; /* Cursor deshabilitado */
+        box-shadow: none; /* Eliminar sombra */
+    }
+
+  @keyframes fadeIn {
+    from {
+      background-color: rgba(0, 0, 0, 0);
+    }
+    to {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+@media screen and (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .right-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .bienvenido {
+        padding: 10px;
+        margin: 0;
+      }
+    
+    #events-container {
+        padding: 10px;
+    }
+}

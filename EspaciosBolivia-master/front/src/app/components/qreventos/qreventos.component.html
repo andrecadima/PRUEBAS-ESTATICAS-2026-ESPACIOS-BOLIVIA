@@ -1,0 +1,46 @@
+<div class = "qreventos-container">
+    <body>
+        <div class="fondooscuro">
+            <header>
+              <div class="logo">ESPACIOS BOLIVIA</div>
+                <!-- Menú principal centrado -->
+                <ul class="navegacion">
+                  <li><button  (click)="goToBienvenido()"><strong>INICIO</strong></button></li>
+                  <li><button  (click)="goToCalendario()"><strong>CALENDARIO</strong></button></li>
+                  <li><button  (click)="goToMapa()"><strong>MAPA</strong></button></li>
+                  <!--<li><a href="#" (click)="goToMapa()">MAPA</a></li>-->
+                </ul>
+                <!-- nombre de usuario -->
+                <div class="right-section">
+                  <ul class="extra-menu">
+                    <li class="user-menu">
+                      <a class="user-link" (click)="toggleDropdown()">
+                        <img src="/assets/usuario.png" alt="Icono Usuario" class="user-icon" />
+                        <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                          {{usuario.nombre}}
+                        </span>
+                      </a>
+                      <!-- Dropdown con la información -->
+                      <div class="user-menu" (click)="toggleDropdown()">
+                        <i class="fa fa-caret-down"></i>
+                      </div>
+                      
+                      <div class="user-dropdown" [class.open]="isDropdownOpen">
+                        <ul>
+                          <li><a (click)="logout()">Cerrar sesión</a></li>
+                        </ul>
+                      </div>                
+                    </li>
+                  </ul>
+                  <div class="halloween"></div>
+                </div>          
+            </header>
+          </div>
+    
+        <main class="contenido-central">
+            <h1>PAGO PARA RESERVA</h1>
+            <div class="cuadro-blanco"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Commons_QR_code.png" alt=""></div>
+            <button class="boton-finalizar" (click)="goToPermiso()">FINALIZAR PAGO</button>
+        </main>
+    </body>
+</div>

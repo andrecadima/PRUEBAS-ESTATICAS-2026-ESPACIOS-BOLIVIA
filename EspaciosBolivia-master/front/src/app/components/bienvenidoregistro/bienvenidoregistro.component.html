@@ -1,0 +1,76 @@
+<div class="bienvenidoregistro-container">
+  <div class="fondo">
+    <div class="fondooscuro">
+      <header>
+        <div class="logo">ESPACIOS BOLIVIA</div>
+          <!-- Menú principal centrado -->
+          <ul class="navegacion">
+            <li><button  id="inicio"  (click)="goToBienvenido()">INICIO</button></li>
+            <li><button  (click)="goToCalendario()">CALENDARIO</button></li>
+            <li><button  (click)="goToMapa()">MAPA</button></li>
+            <!--<li><a href="#" (click)="goToMapa()">MAPA</a></li>-->
+          </ul>
+          <!-- nombre de usuario -->
+          <div class="right-section">
+            <ul class="extra-menu">
+              <li class="user-menu">
+                <a class="user-link" (click)="toggleDropdown()">
+                  <img src="/assets/usuario.png" alt="Icono Usuario" class="user-icon" />
+                  <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                    {{usuario.nombre}}
+                  </span>
+                </a>
+                <!-- Dropdown con la información -->
+                <div class="user-menu" (click)="toggleDropdown()">
+                  <i class="fa fa-caret-down"></i>
+                </div>
+                
+                <div class="user-dropdown" [class.open]="isDropdownOpen">
+                  <ul>
+                    <li><a (click)="logout()">Cerrar sesión</a></li>
+                  </ul>
+                </div>                
+              </li>
+            </ul>
+            <div class="halloween"></div>
+          </div>          
+      </header>
+    </div>
+    <div class="bienvenido">
+      <br><br><br><h1>BIENVENIDO, A ESPACIOS BOLIVIA</h1>
+      <p>Para el día de hoy tenemos {{eventos.length}} eventos.</p>
+
+      <div id="events-container">
+        <!-- Mostrar eventos -->
+        <div *ngIf="eventos.length > 0" class="evento-card-container">
+          <div *ngFor="let evento of eventos" class="evento-card">
+            <div class="evento-content">
+              <div class="evento-informacion">
+                <img [src]="evento.img_evento ? evento.img_evento : 'https://www.la-razon.com/wp-content/uploads/2023/01/19/18/carnaval-de-la-concordia-apg.jpg'" alt="{{ evento.nombre }}" class="evento-imagen" />
+                <h3>{{ evento.nombre }}</h3>
+                <p><strong>Fecha:</strong> {{ evento.fecha }}</p>
+                <p><strong>Hora:</strong> {{ evento.hora_inicio }}:00 - {{ evento.hora_fin }}:00</p>
+                <p><strong>Capacidad:</strong> {{ evento.capacidad_personas }} personas</p>
+                <p><strong>Tipo:</strong> {{ evento.tipo_evento }}</p>
+                <p><strong>Descripción:</strong> {{ evento.descripcion }}</p>
+                <div class="estado-check">
+                  <!-- Estado dinámico -->
+                  <span 
+                    [ngClass]="{'estado-confirmado': evento.estado === 'confirmado', 'estado-pendiente': evento.estado === 'pendiente' ,'estado-rechazado': evento.estado === 'rechazado' }">
+                  </span>
+                </div>
+                <!-- Botón Ver -->
+                <button (click)="verEvento(evento.id)">Ver</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Mensaje adicional -->
+        <p>Haz click en 'Añadir Evento' para reservar un espacio a utilizar por un evento.</p>
+        <div class="button-container">
+          <button id="add-event-button" class="add-event-button" (click)="goToRegistrar()">Añadir Evento</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

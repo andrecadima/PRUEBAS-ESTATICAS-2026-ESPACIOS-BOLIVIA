@@ -1,0 +1,164 @@
+<div class="registraradmin-container">
+    <header>
+        <div class="logo">ESPACIOS BOLIVIA</div>
+          <!-- Menú principal centrado -->
+          <ul class="navegacion">
+            <li><button  id="inicio"  (click)="goToBienvenido()">INICIO</button></li>
+            <li><button  (click)="goToCalendario()">CALENDARIO</button></li>
+            <li><button  (click)="goToMapa()">MAPA</button></li>
+            <!--<li><a href="#" (click)="goToMapa()">MAPA</a></li>-->
+          </ul>
+          <!-- nombre de usuario -->
+          <div class="right-section">
+            <ul class="extra-menu">
+              <li class="user-menu">
+                <a class="user-link" (click)="toggleDropdown()">
+                  <img src="/assets/usuario.png" alt="Icono Usuario" class="user-icon" />
+                  <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                    {{usuario.nombre}}
+                  </span>
+                </a>
+                <!-- Dropdown con la información -->
+                <div class="user-menu" (click)="toggleDropdown()">
+                  <i class="fa fa-caret-down"></i>
+                </div>
+                
+                <div class="user-dropdown" [class.open]="isDropdownOpen">
+                  <ul>
+                    <li><a (click)="logout()">Cerrar sesión</a></li>
+                  </ul>
+                </div>                
+              </li>
+            </ul>
+            <div class="halloween"></div>
+          </div> 
+    </header>
+
+    <div class="bienvenido">
+        <h1>BIENVENIDO, A ESPACIOS BOLIVIA</h1>
+        <p>Para el día de hoy tenemos {{eventos.length}} eventos.</p>
+
+        <div *ngIf="eventos.length > 0; else noEventos" class="evento-card-container">
+            <div class="evento-card" *ngFor="let evento of eventos">
+                <img [src]="evento.img_evento ? evento.img_evento : 'https://www.la-razon.com/wp-content/uploads/2023/01/19/18/carnaval-de-la-concordia-apg.jpg'" alt="{{ evento.nombre }}" class="evento-imagen" />
+                <h3>{{ evento.nombre }}</h3>
+                <p>{{ evento.tipo_evento }}</p>
+                <p>{{ evento.fecha_evento }}</p>
+                <p>{{ evento.hora_inicio }} - {{ evento.hora_fin }}</p>
+                <p>{{ evento.espacio }}</p>
+
+                <button class="evento-boton" (click)="abrirModal(evento)">REVISAR</button>
+            </div>
+        </div>
+
+        <ng-template #noEventos>
+            <p>No hay eventos disponibles en este momento.</p>
+        </ng-template>
+    </div>
+    <section>
+        <button type="submit" class="boton">GESTIONAR ADMINISTRADORES</button>
+    </section>
+
+    <!-- Modal -->
+    <div *ngIf="modalAbierto" class="modal">
+        <div class="modal-content">
+            <span class="close" (click)="cerrarModal()">&times;</span>
+            <h2>Detalles del Evento</h2>
+
+            <!-- Confirmar/Rechazar Evento -->
+            <div class="cambiar-estado">
+                <h3>Confirmar / rechazar Estado</h3>
+                <button class="evento-boton" (click)="cambiarEstado()">Confirmar Evento</button>
+                <button class="evento-boton" (click)="cambiarEstado()">Rechazar Evento</button>
+            </div>
+
+
+            <!-- Cambiar Dueño -->
+            <div class="cambiar-dueno">
+                <h3>Cambiar Dueño</h3>
+                <form (ngSubmit)="cambiarDueno()">
+                    <label for="usuarioNombre">Nuevo Dueño (Nombre de Usuario):</label>
+                    <input
+                        id="usuarioNombre"
+                        [(ngModel)]="eventoSeleccionado.usuarioNombre"
+                        name="usuarioNombre"
+                        placeholder="Nombre del nuevo dueño"
+                        required
+                    />
+
+                    <label for="eventoNombre">Evento (Nombre del Evento):</label>
+                    <input
+                        id="eventoNombre"
+                        [(ngModel)]="eventoSeleccionado.eventoNombre"
+                        name="eventoNombre"
+                        placeholder="Nombre del evento"
+                        required
+                    />
+
+                    <button type="submit">Confirmar Cambiar Dueño</button>
+                </form>
+            </div>
+
+            <!-- Cambiar Espacio -->
+            <div class="cambiar-espacio">
+                <h3>Cambiar Espacio</h3>
+                <form (ngSubmit)="cambiarEspacio()">
+                    <label for="eventoNombreEspacio">Evento (Nombre del Evento):</label>
+                    <input
+                        id="eventoNombreEspacio"
+                        [(ngModel)]="eventoSeleccionado.eventoNombre"
+                        name="eventoNombreEspacio"
+                        placeholder="Nombre del evento"
+                        required
+                    />
+
+                    <label for="espacioNombre">Nuevo Espacio:</label>
+                    <input
+                        id="espacioNombre"
+                        [(ngModel)]="eventoSeleccionado.espacioNombre"
+                        name="espacioNombre"
+                        placeholder="Nuevo espacio"
+                        required
+                    />
+
+                    <button type="submit">Confirmar Cambiar Espacio</button>
+                </form>
+            </div>
+
+            <!-- Ver Usuarios -->
+            <div class="usuarios">
+                <h3>Usuarios del Evento</h3>
+                <ul>
+                    <li *ngFor="let usuario of usuarios">
+                        <p>{{usuario.nombre}} - {{usuario.estado}}</p>
+                        <button class="evento-boton-confirmar" (click)="usuarioSeleccionado = usuario; cambiarEstadoUsuario()">Confirmar</button>
+                        <button class="evento-boton-rechazar" (click)="usuarioSeleccionado = usuario; cambiarEstadoUsuario()">Rechazar</button>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- Peticiones del Evento -->
+            <div class="peticiones">
+                <h3>Peticiones</h3>
+                <ul>
+                    <li *ngFor="let peticion of evento.peticiones">
+                        <p>{{peticion.nombre}}: {{peticion.descripcion}}</p>
+                        <button class="evento-boton" (click)="procesarPeticion(peticion, 'confirmada')">Confirmar</button>
+                        <button class="evento-boton" (click)="procesarPeticion(peticion, 'rechazada')">Rechazar</button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Calificaciones del Evento -->
+            <div class="calificaciones">
+                <h3>Calificaciones</h3>
+                <ul>
+                    <li *ngFor="let calificacion of calificaciones">
+                        <p>{{calificacion.id_evento}}: {{calificacion.calificacion}}: {{calificacion.descripcion}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+<div clas="verEvento-container">
+    <body>
+        <div class="fondo">
+          <div class="fondooscuro">
+            <header>
+              <div class="logo">ESPACIOS BOLIVIA</div>
+                <!-- Menú principal centrado -->
+                <ul class="navegacion">
+                  <li><button  (click)="goToVolver()">INICIO</button></li>
+                  <li><button  (click)="goToCalendario()">CALENDARIO</button></li>
+                  <li><button  (click)="goToMapa()">MAPA</button></li>
+                </ul>
+                <!-- nombre de usuario -->
+                <div class="right-section">
+                  <ul class="extra-menu">
+                    <li class="user-menu">
+                      <a class="user-link" (click)="toggleDropdown()">
+                        <img src="/assets/usuario.png" alt="Icono Usuario" class="user-icon" />
+                        <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                          {{usuario.nombre}}
+                        </span>
+                      </a>
+                      <!-- Dropdown con la información -->
+                      <div class="user-menu" (click)="toggleDropdown()">
+                        <i class="fa fa-caret-down"></i>
+                      </div>
+                      
+                      <div class="user-dropdown" [class.open]="isDropdownOpen">
+                        <ul>
+                          <li><a (click)="logout()">Cerrar sesión</a></li>
+                        </ul>
+                      </div>                
+                    </li>
+                  </ul>
+                  <div class="halloween"></div>
+                </div>          
+              </header>
+          </div>
+      
+          <div class="l2">
+            <h1><br><br>Evento Completo :</h1>
+          </div>
+      
+          <div class="formulario-container">
+            <form id="event-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="event-name">Id del evento:</label>
+                  <input type="text" id="event-id" [(ngModel)]="eventoSeleccionado.id" name="id" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="event-name">Nombre de evento:</label>
+                  <input type="text" id="event-name" [(ngModel)]="eventoSeleccionado.nombre" name="nombre" placeholder="Escribe tu evento">
+                </div>
+                <div class="form-group">
+                  <label for="event-type">Tipo del evento:</label>
+                  <input type="text" id="event-type" [(ngModel)]="eventoSeleccionado.tipo_evento" name="tipo_evento" placeholder="Escribe el tipo de evento">
+                </div>
+                <div class="form-group">
+                  <label for="event-description">Descripción:</label>
+                  <input type="text" id="event-description" [(ngModel)]="eventoSeleccionado.descripcion" name="descripcion" placeholder="Escribe el num de documento">
+                </div>
+                <div class="form-group">
+                  <label for="event-date">Fecha:</label>
+                  <input type="text" id="event-date" [(ngModel)]="eventoSeleccionado.fecha_reserva" name="fecha_reserva" [ngModel]="eventoSeleccionado.fecha_reserva | date:'yyyy-MM-dd'"  placeholder="aaaa/mm/dd">
+                </div>
+                <div class="form-group">
+                  <label for="user-name">Nombre de Usuario:</label>
+                  <input type="text" id="user-name" [(ngModel)]="usuario.nombre" name="user_nombre" placeholder="Cambiar dueño">
+                </div>
+                <div class="form-group">
+                  <label for="event-location">Lugar del evento:</label>
+                  <input type="text" id="event-location"  placeholder="Recibir del mapa">
+                </div>
+                <div class="form-group">
+                  <label for="number">Capacidad Personas:</label>
+                  <input type="text" id="start-time" [(ngModel)]="eventoSeleccionado.capacidad_personas" name="capacidad_personas" placeholder="Hora de inicio">
+                </div>
+                <div class="form-group">
+                  <label for="start-time">Hora de inicio:</label>
+                  <input type="text" id="start-time" [(ngModel)]="eventoSeleccionado.hora_inicio" name="hora_inicio" placeholder="Hora de inicio">
+                </div>
+                <div class="form-group">
+                  <label for="end-time">Hora Finalización:</label>
+                  <input type="text" id="end-time" [(ngModel)]="eventoSeleccionado.hora_fin" name="hora_fin" placeholder="Hora Final">
+                </div>
+                <div class="form-group">
+                  <label for="event-cost">Monto del evento:</label>
+                  <input type="text" id="event-cost" [(ngModel)]="eventoSeleccionado.costo" name="costo"placeholder="Por defecto de la base">
+                </div>
+                <div class="form-group">
+                  <label for="event-url">URL documentación:</label>
+                  <input type="text" id="event-url" [(ngModel)]="eventoSeleccionado.urlpermisos" name="urlpermisos" placeholder="Ingrese el URL de su documento">
+                </div>
+                <!--<div class="form-group">
+                  <label for="text">Tipo de Pago:</label>
+                  <input type="text" id="event-url" [(ngModel)]="eventoSeleccionado.tipo_pago" name="tipo_pago" placeholder="Ingrese el tipo de pago">
+                </div>-->
+              </div>
+              <div class="form-buttons">
+                <button type="submit">GUARDAR</button>
+                <button type="button" id="delete-button">ELIMINAR</button>
+                <button type="button">EDITAR</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      
+        <script src="script.js"></script>
+      </body>
+      
+</div>

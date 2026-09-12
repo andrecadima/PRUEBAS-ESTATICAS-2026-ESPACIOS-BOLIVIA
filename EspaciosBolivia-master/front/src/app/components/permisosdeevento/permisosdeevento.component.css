@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family:'Trebuchet MS';
+ }
+ 
+.container {
+    padding-top: 100px;
+}
+ 
+ .fondooscuro {
+    background-color: black;
+    padding: 20px;
+  }
+  
+  /* Header */
+  header {
+    width: 100%;
+    padding: 5px 0;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 30px;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .navegacion {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+    margin-right: 30px;
+  }
+  
+  .navegacion button {
+    background-color: black; 
+    border: none; 
+    color: white; 
+    font-size: 16px;
+  }
+  
+  
+  .navegacion a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s;
+  }
+  
+  
+  .navegacion a:hover {
+    color: rgb(193, 185, 223);
+  }
+  
+  /* Sección derecha: Inicio de sesión y botón */
+  .right-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #000;
+    padding: 10px;
+  }
+  
+  .extra-menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .extra-menu li {
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .extra-menu li:hover {
+    background-color: #444;
+  }
+  
+  .extra-menu a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Enlace de usuario */
+  .user-menu {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .user-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .user-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  /* Dropdown oculto por defecto */
+  .user-dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%; /* Position below the button */
+    left: 0;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+  }
+  
+  .user-dropdown.open {
+    display: block; /* Display when the dropdown is open */
+  }
+  
+  /* Botón de logout */
+  .logout-btn {
+    display: block;
+    background-color: #ff4b4b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 10px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #e03d3d;
+  }
+  
+
+
+   body {
+     font-family:'Trebuchet MS';
+     margin: 0;
+     background-color: black;
+   }
+ 
+ h1{
+     color: white;
+     font-size: 35px;
+     text-transform:uppercase;
+     padding: 10px;
+     height: 100px;
+     width: 1500px;
+ }
+   
+ .info {
+    text-align:center;
+ }
+ 
+ .button {
+    display: inline-block;
+    background-color:yellow;
+    color: black;
+    text-decoration: underline;
+    padding: 1rem 1.5rem;
+    font-weight: bold;
+    font-size: large;
+    text-transform: capitalize;
+    border-radius: 30px;
+    position: relative;
+    left: 700px;
+ }
+ 
+ .button-container{
+    padding: 2rem;
+ }
+ 

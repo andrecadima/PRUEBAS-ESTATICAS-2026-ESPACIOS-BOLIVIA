@@ -1,0 +1,350 @@
+/* Reset y configuración inicial */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+/* Header */
+header {
+    width: 100%;
+    padding: 5px 0;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  
+/* Fondo de la página */
+.fondo {
+    background-color: black;
+    width: 100%;
+    height: 100vh; /* Altura completa de la pantalla */
+}
+
+.fondooscuro {
+    background-color: black;
+    padding: 20px;
+}
+
+/* Navegación */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px; /* Ajusta los márgenes internos */
+}
+
+/* Logotipo y nombre */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 30px;
+    color: white;
+    text-transform: uppercase;
+  }
+
+
+
+/* Menú principal */
+.navegacion {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+    margin-right: 30px;
+  }
+  
+  .navegacion a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s;
+  }
+  
+  .navegacion a[href="/bienvenidopresidente"] {
+    text-decoration: underline;
+  }
+  
+  .navegacion a:hover {
+    color: rgb(193, 185, 223);
+  }
+
+  
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 120px; /* Espacio entre los elementos del menú */
+    margin: 0 auto; /* Centra el menú principal */
+    color: white;
+    text-decoration: underline;
+}
+
+.menu li {
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.menu li:hover {
+    background-color: #444;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Sección derecha: Inicio de sesión y botón */
+.right-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #000;
+    padding: 10px;
+  }
+  
+  .extra-menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .extra-menu li {
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .extra-menu li:hover {
+    background-color: #444;
+  }
+  
+  .extra-menu a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Enlace de usuario */
+  .user-menu {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .user-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .user-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  /* Dropdown oculto por defecto */
+  .user-dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%; /* Position below the button */
+    left: 0;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+  }
+  
+  .user-dropdown.open {
+    display: block; /* Display when the dropdown is open */
+  }
+  
+  /* Botón de logout */
+  .logout-btn {
+    display: block;
+    background-color: #ff4b4b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 10px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #e03d3d;
+  }
+  
+
+/* Botón de registro */
+.buy-tickets button {
+    background-color: #ff9f00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-tickets button:hover {
+    background-color: #e87e00;
+}
+
+.back-button {
+    position: absolute;
+    bottom: 300px; /* Ajusta según sea necesario */
+    left: 150px;  /* Ajusta según sea necesario */
+}
+
+.back-button a img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.back-button a img:hover {
+    transform: scale(1.1);
+}
+
+.titulo2 {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilos para el formulario de registro de eventos */
+
+.tipo_pago label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tipo_pago input[type="radio"] {
+    width: 20px; /* Ajusta el tamaño del radio button */
+    height: 20px;
+}
+
+.tipo_pago span {
+    font-size: 18px; /* Tamaño más grande para el texto */
+}
+
+
+/* Estilos para el formulario de registro de eventos */
+.registro-evento {
+
+max-width: 800px;
+margin: 50px auto;
+padding: 20px;
+background-color: black;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+color: white;
+}
+
+.registro-evento h2 {
+text-align: center;
+font-size: 36px; /* Aumenta el tamaño de la fuente */ 
+text-align: center; 
+margin-bottom: 20px;
+}
+
+.form-group {
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+justify-content: center;
+}
+
+.form-group label {
+flex: 1;
+margin-right: 10px;
+font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+flex: 2;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+width: calc(100% - 20px);
+}
+
+.form-group textarea {
+resize: vertical;
+}
+
+.form-group button {
+background-color:yellow;
+color: black;
+padding: 5px 10px; /* Tamaño más pequeño */
+font-size: 12px; /* Ajusta el tamaño de la fuente */
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+
+}
+
+.form-group button:hover {
+background-color: #e87e00;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .right-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .right-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

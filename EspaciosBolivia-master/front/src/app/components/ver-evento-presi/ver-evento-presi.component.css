@@ -1,0 +1,265 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: -webkit-center;
+  font-family: Arial, sans-serif;
+}
+
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+    padding: 0;
+}
+
+/* Header */
+header {
+  width: 100%;
+  padding: 5px 0;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+  .fondo {
+    background-color: black;
+    color: white;
+    padding: 20px;
+  }
+  
+  .fondooscuro {
+    background-color: black;
+    padding: 20px;
+  }
+  
+  
+  /* Navegación */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px; /* Ajusta los márgenes internos */
+}
+
+/* Logotipo y nombre */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 30px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.navegacion {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 25px;
+  margin-right: 30px;
+  outline: none;
+}
+
+.navegacion button {
+  background-color: black; 
+  border: none; 
+  color: white; 
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px;
+  outline: none;
+}
+
+ul {
+  list-style-type: none; /* Elimina los marcadores */
+}
+
+/* Sección derecha: Inicio de sesión y botón */
+.right-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #000;
+  padding: 10px;
+}
+
+.extra-menu {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.extra-menu li {
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.extra-menu li:hover {
+  background-color: #444;
+}
+
+.extra-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Enlace de usuario */
+.user-menu {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.user-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.user-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Dropdown oculto por defecto */
+.user-dropdown {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 100%; /* Position below the button */
+  left: 0;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.user-dropdown.open {
+  display: block; /* Display when the dropdown is open */
+}   
+
+/* Botón de logout */
+.logout-btn {
+  display: block;
+  background-color: #ff4b4b;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+.logout-btn:hover {
+  background-color:#e03d3d;
+}
+
+  
+  .navegacion a:hover {
+    color: #ddd;
+  }
+  
+  .l2 {
+    margin-top: 20px;
+    text-align: left;
+    color: white;
+  }
+  
+  .formulario-container {
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+    color: white    ;
+    max-width: 800px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-group button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background-color: yellow;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 10px
+  }
+  
+  .form-group button:hover {
+    background-color: yellow;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .form-buttons button {
+    width: 20%;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-buttons button:hover {
+    background-color: #218838;
+  }
+  
+  #delete-button {
+    background-color: #dc3545;
+  }
+  
+  #delete-button:hover {
+    background-color: #c82333;
+  }
+  

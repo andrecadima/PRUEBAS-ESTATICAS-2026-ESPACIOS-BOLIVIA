@@ -1,0 +1,92 @@
+<div class="bienvenidoregistro-container">
+  <div class="fondo">
+    <div class="fondooscuro">
+      <header>
+        <div class="logo">ESPACIOS BOLIVIA</div>
+          <!-- Menú principal centrado -->
+          <ul class="navegacion">
+            <li><button  id="inicio"  (click)="goToBienvenido()">INICIO</button></li>
+            <li><button  (click)="goToCalendario()">CALENDARIO</button></li>
+            <li><button  (click)="goToMapa()">MAPA</button></li>
+            <!--<li><a href="#" (click)="goToMapa()">MAPA</a></li>-->
+          </ul>
+          <!-- nombre de usuario -->
+          <div class="right-section">
+            <ul class="extra-menu">
+              <li class="user-menu">
+                <a class="user-link" (click)="toggleDropdown()">
+                  <img src="/assets/usuario.png" alt="Icono Usuario" class="user-icon" />
+                  <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                    {{usuario.nombre}}
+                  </span>
+                </a>
+                <!-- Dropdown con la información -->
+                <div class="user-menu" (click)="toggleDropdown()">
+                  <i class="fa fa-caret-down"></i>
+                </div>
+                
+                <div class="user-dropdown" [class.open]="isDropdownOpen">
+                  <ul>
+                    <li><a (click)="logout()">Cerrar sesión</a></li>
+                  </ul>
+                </div>                
+              </li>
+            </ul>
+            <div class="halloween"></div>
+          </div>          
+      </header>
+    </div>
+    <div class="bienvenido">
+      <br><br><br><h1>BIENVENIDO, A ESPACIOS BOLIVIA</h1>
+      <p>Para el día de hoy tenemos {{eventos.length}} eventos.</p>
+
+      <div *ngIf="eventos.length > 0; else noEventos" class="evento-card-container">
+        <div class="evento-card" *ngFor="let evento of eventos">
+          <img [src]="evento.img_evento ? evento.img_evento : 'https://www.la-razon.com/wp-content/uploads/2023/01/19/18/carnaval-de-la-concordia-apg.jpg'" alt="{{ evento.nombre }}" class="evento-imagen" />
+          <h3>{{ evento.nombre }}</h3>
+          <p>{{ evento.tipo_evento }}</p>
+          <p>{{ evento.fecha_evento }}</p>
+          <p>{{ evento.hora_inicio }} - {{ evento.hora_fin }}</p>
+          <p>{{ evento.espacio }}</p>
+
+          <!-- Botón para abrir el modal -->
+          <button (click)="abrirModal(evento)">Comentar</button>
+        </div>
+      </div>
+
+      <ng-template #noEventos>
+        <p>No hay eventos disponibles en este momento.</p>
+      </ng-template>
+
+      <!-- Modal para comentar y puntuar -->
+      <div *ngIf="modalAbierto" class="modal">
+        <div class="modal-content">
+          <span (click)="cerrarModal()" class="close">&times;</span>
+          <h2>Comentar sobre el evento</h2>
+
+          <textarea [(ngModel)]="comentario" placeholder="Escribe tu comentario aquí..."></textarea>
+
+          <div class="estrellas">
+            <input type="radio" id="estrella5" name="calificacion" [(ngModel)]="calificacion" value="5">
+            <label for="estrella5">&#9733;</label>
+          
+            <input type="radio" id="estrella4" name="calificacion" [(ngModel)]="calificacion" value="4">
+            <label for="estrella4">&#9733;</label>
+          
+            <input type="radio" id="estrella3" name="calificacion" [(ngModel)]="calificacion" value="3">
+            <label for="estrella3">&#9733;</label>
+          
+            <input type="radio" id="estrella2" name="calificacion" [(ngModel)]="calificacion" value="2">
+            <label for="estrella2">&#9733;</label>
+          
+            <input type="radio" id="estrella1" name="calificacion" [(ngModel)]="calificacion" value="1">
+            <label for="estrella1">&#9733;</label>
+          </div>
+          
+
+          <button (click)="enviarComentario()">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

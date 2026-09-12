@@ -1,0 +1,84 @@
+<div class="mapaeventos-container">
+  <div class="fondooscuro">
+    <div class="fondooscuro">
+      <header>
+        <div class="logo">ESPACIOS BOLIVIA</div>
+          <!-- Menú principal centrado -->
+          <ul class="navegacion">
+            <li><button  (click)="goToVolver()">INICIO</button></li>
+            <li><button  (click)="goToCalendario()">CALENDARIO</button></li>
+            <li><button  id="mapa"  (click)="goToMapa()">MAPA</button></li>
+          </ul>
+          <!-- nombre de usuario -->
+          <div class="right-section">
+            <ul class="extra-menu">
+              <li class="user-menu">
+                <a class="user-link" (click)="toggleDropdown()">
+                  <img src="/assets/usuario.png" alt="Icono Usuario" class="user-icon" />
+                  <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                    {{usuario.nombre}}
+                  </span>
+                </a>
+                <!-- Dropdown con la información -->
+                <div class="user-menu" (click)="toggleDropdown()">
+                  <i class="fa fa-caret-down"></i>
+                </div>
+                
+                <div class="user-dropdown" [class.open]="isDropdownOpen">
+                  <ul>
+                    <li><a (click)="logout()">Cerrar sesión</a></li>
+                  </ul>
+                </div>                
+              </li>
+            </ul>
+            <div class="halloween"></div>
+          </div>          
+        </header>
+    </div>
+  </div>
+
+  <div class="l2">MAPA COCHABAMBA BOLIVIA :  </div>
+
+  <div class="contendor-mapa">
+    <div class="color-blanco">
+      <!-- Selector de eventos -->
+      <form #eventForm="ngForm" class="card flex justify-center">
+        <!-- Verificamos si 'eventos' tiene datos antes de mostrar el <select> -->
+        <div *ngIf="eventos && eventos.length > 0; else noEventos">
+          <select [(ngModel)]="selectedEvento" name="evento" class="form-control" (change)="onEventSelect($event)">
+            <option value="" disabled selected>Selecciona un evento</option>
+            <option *ngFor="let evento of eventos" [value]="evento.urlmapa">{{ evento.name }}</option>
+          </select>
+        </div>
+        
+        <!-- Este bloque se muestra si no hay eventos -->
+        <ng-template #noEventos>
+          <p>No hay eventos disponibles.</p>
+        </ng-template>
+      </form>
+      
+
+      <!-- Mensajes de advertencia o error -->
+      <div *ngIf="eventos.length === 0 && !error">
+        <p>No hay eventos disponibles</p>
+      </div>
+      <div *ngIf="error">
+        <p>Error al cargar los eventos</p>
+      </div>
+    </div>
+
+    <!-- Mapa de Google -->
+    <div id="map" style="width: 42%; height: 471px; background-color: hsl(202, 75%, 19%); " *ngIf="selectedMapUrl">
+      <iframe
+        [src]="selectedMapUrl" 
+        width="600"
+        height="450"
+        style="border: 0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <button id="register-event-button" class="register-event-button" (click)="goToVolver()">Volver</button>
+  </div>
+</div>
