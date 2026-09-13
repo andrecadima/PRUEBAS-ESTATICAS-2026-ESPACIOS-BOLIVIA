@@ -1,5 +1,0 @@
-# SonarQube local analysis output
-.scannerwork/
-
-# SonarCloud project configuration is supplied by GitHub Actions
-sonar-project.properties
