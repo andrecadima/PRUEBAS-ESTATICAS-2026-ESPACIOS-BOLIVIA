@@ -1,4 +1,4 @@
-name: Sonar Quality Gate
+name: SonarCloud Quality Gate
 
 on:
   pull_request:
@@ -22,10 +22,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: SonarQube Scan and Quality Gate
+      - name: SonarCloud Scan and Quality Gate
         uses: SonarSource/sonarqube-scan-action@v8.2.1
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          # Set this repository variable for SonarQube Server.
-          # Leave it unset when using SonarQube Cloud.
-          SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
+        with:
+          args: >
+            -Dsonar.organization=${{ vars.SONAR_ORGANIZATION }}
+            -Dsonar.projectKey=PRUEBAS-ESTATICAS-2026-ESPACIOS-BOLIVIA
+            -Dsonar.sources=EspaciosBolivia-master
+            -Dsonar.sourceEncoding=UTF-8
+            -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/build/**,**/.angular/**,**/.scannerwork/**,**/coverage/**,**/package-lock.json,**/src/assets/**
+            -Dsonar.qualitygate.wait=true
+            -Dsonar.qualitygate.timeout=300
