@@ -4,8 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-calendario-user',
   standalone: true,
   imports: [],
-  templateUrl: './calendario-user.component.html',
-  styleUrl: './calendario-user.component.css'
+  templateUrl: './calendario-user.component.html'
 })
 export class CalendarioUserComponent {
 
