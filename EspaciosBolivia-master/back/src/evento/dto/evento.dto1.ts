@@ -1,5 +1,3 @@
-import { StringDecoder } from "string_decoder";
-
 export class EventoDto1 {
 
 
