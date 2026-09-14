@@ -10,7 +10,7 @@ import { EventoDtoU } from './dto/evento.dtou';
 export class EventoService 
 {
 
-  private eventoRepository;
+  private readonly eventoRepository;
   private usuarioRepository;
   private espacioRepository;
 
