@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
 
-  private userSubject = new BehaviorSubject<any>(null);
+  private readonly userSubject = new BehaviorSubject<any>(null);
   user$ = this.userSubject.asObservable(); // Suscribirse al usuario actual
 
   private readonly apiUrl = 'http://localhost:3000/usuario'; // Tu API base
