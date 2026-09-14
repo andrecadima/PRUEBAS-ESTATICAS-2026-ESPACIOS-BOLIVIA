@@ -9,7 +9,7 @@ import { EventoEntity } from 'src/evento/evento.entity';
 export class PeticionesService 
 {
     private peticionRepository;
-    private usuarioRepository;
+    private readonly usuarioRepository;
     private eventoRepository;
 
     constructor(private dataSource: DataSource) 
