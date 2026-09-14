@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-permisosdeevento',
@@ -20,7 +19,7 @@ export class PermisosdeeventoComponent implements OnInit{
     eventos: any[] = [];
     isDropdownOpen= false; // Estado para el dropdown
   
-    constructor( private route: ActivatedRoute, private readonly router: Router) {}
+    constructor( private readonly route: ActivatedRoute, private readonly router: Router) {}
   
     ngOnInit(): void {
       this.usuario.nombre = this.route.snapshot.paramMap.get('User'); // Obtén el nombre desde la URL

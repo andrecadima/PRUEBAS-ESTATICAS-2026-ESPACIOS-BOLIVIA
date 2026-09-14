@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';  // Importa CommonModule
@@ -40,7 +40,7 @@ export class VerEventoPresiComponent {
   isDropdownOpen = false;
   error: any;
 
-  constructor(private authservice: AuthService, private apiService: ApiService,  private router: Router, private route: ActivatedRoute){}
+  constructor(private authservice: AuthService, private readonly apiService: ApiService,  private router: Router, private route: ActivatedRoute){}
 
   ngOnInit(): void {
     this.usuario.nombre= this.route.snapshot.paramMap.get('User'); //para poner el nombre usuario

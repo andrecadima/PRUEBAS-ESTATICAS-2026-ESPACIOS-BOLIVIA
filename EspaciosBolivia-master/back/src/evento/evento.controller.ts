@@ -16,8 +16,8 @@ import { EventoEntity } from './evento.entity';
 export class EventoController 
 {
 
-   private readonly usuariocontrol;
-   private espaciocontrol;
+    private readonly usuariocontrol;
+    private readonly espaciocontrol;
    private eventocontrol;
    
    constructor(private readonly eventoservice: EventoService, private readonly dataSource: DataSource)
