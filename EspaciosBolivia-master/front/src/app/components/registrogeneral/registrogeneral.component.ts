@@ -48,16 +48,9 @@ export class RegistrogeneralComponent
         {
           this.router.navigate(['/condiciones']);
         } else { 
-          if (this.tipousuario === 'Empresa') 
+          if (this.tipousuario === 'Empresa' || this.tipousuario === 'Admin' || this.tipousuario === 'Usuario') 
           {
             this.router.navigate(['/condiciones']);
-          }else {
-            if (this.tipousuario === 'Usuario') 
-            {
-              this.router.navigate(['/condiciones']);
-            }else{ 
-               this.router.navigate(['/condiciones']);
-            }
           }
         }; 
       },
