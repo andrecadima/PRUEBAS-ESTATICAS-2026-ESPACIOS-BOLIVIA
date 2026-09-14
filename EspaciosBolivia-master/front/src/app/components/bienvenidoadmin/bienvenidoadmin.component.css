@@ -27,7 +27,7 @@ h1, h2 {
 
 .boton {
   padding: 10px 20px;
-  font-family: 'Trebuchet MS';
+  font-family: 'Trebuchet MS', sans-serif;
   font-size: 1.3rem;
   background-color: #008cff;
   color: #ffffff; 
