@@ -17,7 +17,7 @@ export class EventoController
 {
 
    private usuariocontrol;
-   private espaciocontrol;
+   private readonly espaciocontrol;
    private eventocontrol;
    
    constructor(private readonly eventoservice: EventoService, private dataSource: DataSource)
