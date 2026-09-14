@@ -40,7 +40,7 @@ export class VerEventoPresiComponent {
   isDropdownOpen = false;
   error: any;
 
-  constructor(private authservice: AuthService, private apiService: ApiService,  private router: Router, private route: ActivatedRoute){}
+  constructor(private authservice: AuthService, private apiService: ApiService,  private router: Router, private readonly route: ActivatedRoute){}
 
   ngOnInit(): void {
     this.usuario.nombre= this.route.snapshot.paramMap.get('User'); //para poner el nombre usuario
