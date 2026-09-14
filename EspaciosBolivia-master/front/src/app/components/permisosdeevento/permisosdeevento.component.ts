@@ -19,7 +19,7 @@ export class PermisosdeeventoComponent implements OnInit{
     eventos: any[] = [];
     isDropdownOpen= false; // Estado para el dropdown
   
-    constructor( private route: ActivatedRoute, private router: Router) {}
+    constructor( private readonly route: ActivatedRoute, private router: Router) {}
   
     ngOnInit(): void {
       this.usuario.nombre = this.route.snapshot.paramMap.get('User'); // Obtén el nombre desde la URL
