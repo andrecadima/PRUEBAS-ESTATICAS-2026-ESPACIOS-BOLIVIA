@@ -8,7 +8,7 @@ import { EventoEntity } from 'src/evento/evento.entity';
 @Injectable()
 export class PeticionesService 
 {
-    private peticionRepository;
+    private readonly peticionRepository;
     private usuarioRepository;
     private eventoRepository;
 
