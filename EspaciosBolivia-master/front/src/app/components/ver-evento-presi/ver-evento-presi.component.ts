@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './ver-evento-presi.component.html',
   styleUrl: './ver-evento-presi.component.css'
 })
-export class VerEventoPresiComponent {
+export class VerEventoPresiComponent implements OnInit {
   usuario: any = {
     nombre: null
   }
