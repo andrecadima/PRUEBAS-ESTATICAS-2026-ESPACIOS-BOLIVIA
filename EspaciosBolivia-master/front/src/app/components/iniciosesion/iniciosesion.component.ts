@@ -20,7 +20,7 @@ export class IniciosesionComponent {
   passwordVisible: boolean = false; 
 
 
-  constructor(private authService: AuthService,private router: Router) {}
+  constructor(private readonly authService: AuthService,private router: Router) {}
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
   }
