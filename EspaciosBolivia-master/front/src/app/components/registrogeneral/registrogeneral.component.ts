@@ -44,25 +44,9 @@ export class RegistrogeneralComponent
       (respuesta) => {
 
         console.log('Registro de usuario exitoso:', respuesta);
-        if (this.tipousuario === 'Presidente OTB') 
-        {
+        if (['Presidente OTB', 'Empresa', 'Usuario', 'Admin'].includes(this.tipousuario)) {
           this.router.navigate(['/condiciones']);
-        } else { 
-          if (this.tipousuario === 'Empresa') 
-          {
-            this.router.navigate(['/condiciones']);
-          }else {
-            if (this.tipousuario === 'Usuario') 
-            {
-              this.router.navigate(['/condiciones']);
-            }else{ 
-              if (this.tipousuario === 'Admin') 
-              {
-                this.router.navigate(['/condiciones']);
-              }
-            }
-          }
-        }; 
+        }
       },
       (error) => {
         console.error('Error al registrar usuario:', error);
@@ -71,4 +55,4 @@ export class RegistrogeneralComponent
       }
     );
   }
-} 
+}
