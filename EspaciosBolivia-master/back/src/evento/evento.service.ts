@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { EventoEntity } from './evento.entity';
 import { EventoDto } from './dto/evento.dto';
-import { DataSource, Not } from 'typeorm';
+import { DataSource } from 'typeorm';
 import { UsuarioEntity } from 'src/usuario/usuario.entity';
 import { EspacioEntity } from 'src/espacio/espacio.entity';
 import { EventoDtoU } from './dto/evento.dtou';
