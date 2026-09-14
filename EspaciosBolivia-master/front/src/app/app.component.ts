@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
   eventos: any[] = [];
   user: any = null;
 
-  constructor(private apiService: ApiService) {}
+  constructor(private readonly apiService: ApiService) {}
 
   ngOnInit() {
     console.log(this.loadEventos());
