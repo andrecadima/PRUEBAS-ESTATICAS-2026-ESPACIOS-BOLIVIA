@@ -18,7 +18,7 @@ body {
 
 h1, h2 {
   font-size: 2rem;
-  font-family: 'Trebuchet MS';
+  font-family: 'Trebuchet MS', sans-serif;
   margin-bottom: 20px;
   color: #fff;
   text-align: left;
