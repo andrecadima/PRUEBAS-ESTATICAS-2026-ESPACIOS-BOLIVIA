@@ -37,7 +37,7 @@ export class BienvenidoadminComponent implements OnInit {
   isDropdownOpen= false; // Estado para el dropdown
 
   constructor(
-    private apiService: ApiService,
+    private readonly apiService: ApiService,
     private route: ActivatedRoute,
     private router: Router,
     private authservice: AuthService
