@@ -21,7 +21,7 @@
                         </span>
                       </a>
                       <!-- Dropdown con la información -->
-                      <div class="user-menu" (click)="toggleDropdown()">
+                      <div class="user-menu" role="button" tabindex="0" aria-label="Abrir menú de usuario" (click)="toggleDropdown()" (keydown.enter)="toggleDropdown()">
                         <i class="fa fa-caret-down"></i>
                       </div>
                       
