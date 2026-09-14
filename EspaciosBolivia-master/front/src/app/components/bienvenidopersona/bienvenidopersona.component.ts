@@ -36,7 +36,7 @@ export class BienvenidopersonaComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private route: ActivatedRoute,
+    private readonly route: ActivatedRoute,
     private router: Router,
     private authservice: AuthService
   ) {}
