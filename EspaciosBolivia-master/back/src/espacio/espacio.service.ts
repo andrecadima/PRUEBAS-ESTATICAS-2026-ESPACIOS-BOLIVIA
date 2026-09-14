@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { EspacioEntity } from './espacio.entity';
 import { EspacioDto } from './dto/espacio.dto';
 import { DataSource } from 'typeorm';
