@@ -11,7 +11,7 @@ export class AuthService {
   private userSubject = new BehaviorSubject<any>(null);
   user$ = this.userSubject.asObservable(); // Suscribirse al usuario actual
 
-  private apiUrl = 'http://localhost:3000/usuario'; // Tu API base
+  private readonly apiUrl = 'http://localhost:3000/usuario'; // Tu API base
 
   constructor(private readonly http: HttpClient) {}
 
