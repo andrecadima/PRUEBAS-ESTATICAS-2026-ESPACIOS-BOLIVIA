@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule , Router} from '@angular/router';
@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./registroevento.component.css']
 })
 
-export class RegistroeventoComponent {
+export class RegistroeventoComponent implements OnInit {
 
   usuario: any = {
     nombre: null

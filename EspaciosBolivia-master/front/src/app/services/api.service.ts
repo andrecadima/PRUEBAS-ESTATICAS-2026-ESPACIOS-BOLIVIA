@@ -5,8 +5,8 @@ import axios, { AxiosInstance } from 'axios';
   providedIn: 'root',
 })
 export class ApiService {
-  private axiosInstance: AxiosInstance;
-  private readonly baseUrl = 'http://localhost:3000';
+  private readonly axiosInstance: AxiosInstance;
+  private baseUrl = 'http://localhost:3000';
 
   constructor() {
     this.axiosInstance = axios.create({

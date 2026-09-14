@@ -46,7 +46,12 @@ export class RegistrogeneralComponent
         console.log('Registro de usuario exitoso:', respuesta);
         if (['Presidente OTB', 'Empresa', 'Usuario', 'Admin'].includes(this.tipousuario)) {
           this.router.navigate(['/condiciones']);
-        }
+        } else { 
+          if (this.tipousuario === 'Empresa' || this.tipousuario === 'Admin' || this.tipousuario === 'Usuario') 
+          {
+            this.router.navigate(['/condiciones']);
+          }
+        }; 
       },
       (error) => {
         console.error('Error al registrar usuario:', error);

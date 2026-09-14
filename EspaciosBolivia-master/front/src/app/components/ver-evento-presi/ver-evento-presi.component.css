@@ -164,7 +164,7 @@ ul {
 /* Botón de logout */
 .logout-btn {
   display: block;
-  background-color: #ff4b4b;
+  background-color: #9b0000;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -243,7 +243,7 @@ ul {
   .form-buttons button {
     width: 20%;
     padding: 15px;
-    background-color: #28a745;
+    background-color: #004811;
     color: white;
     border: none;
     border-radius: 5px;

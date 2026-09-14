@@ -1,14 +1,14 @@
 // Calendario_de_eventos_script.js
 document.addEventListener('DOMContentLoaded', function () {
-    var calendarEl = document.getElementById('calendar');
+    let calendarEl = document.getElementById('calendar');
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
+    let calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         events: function (fetchInfo, successCallback, failureCallback) {
             fetch('https://api.example.com/events') // Cambia esta URL por la de tu API
                 .then(response => response.json())
                 .then(data => {
-                    var events = data.map(event => {
+                    let events = data.map(event => {
                         return {
                             title: event.title,
                             start: event.start,

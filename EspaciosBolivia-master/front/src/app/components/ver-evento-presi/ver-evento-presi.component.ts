@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './ver-evento-presi.component.html',
   styleUrl: './ver-evento-presi.component.css'
 })
-export class VerEventoPresiComponent {
+export class VerEventoPresiComponent implements OnInit {
   usuario: any = {
     nombre: null
   }
@@ -40,7 +40,7 @@ export class VerEventoPresiComponent {
   isDropdownOpen = false;
   error: any;
 
-  constructor(private authservice: AuthService, private readonly apiService: ApiService,  private router: Router, private readonly route: ActivatedRoute){}
+  constructor(private readonly authservice: AuthService, private apiService: ApiService,  private readonly router: Router, private route: ActivatedRoute){}
 
   ngOnInit(): void {
     this.usuario.nombre= this.route.snapshot.paramMap.get('User'); //para poner el nombre usuario
