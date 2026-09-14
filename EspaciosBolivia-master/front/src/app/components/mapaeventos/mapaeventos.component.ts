@@ -93,18 +93,14 @@ export class MapaeventosComponent implements OnInit {
       // Código a ejecutar si la condición se cumple
       this.router.navigate(['/bienvenidoadmin', this.usuario.nombre]); 
       console.log('El usuario es administrador');
-    }else{
-      if (this.tipoNombre === 'persona') {
+    } else if (this.tipoNombre === 'persona') {
         // Código a ejecutar si la condición se cumple
         this.router.navigate(['/bienvenidopersona', this.usuario.nombre]); 
         console.log('El usuario es persona');
-      }else{
-        if (this.tipoNombre === 'presiempresa') {
+    } else if (this.tipoNombre === 'presiempresa') {
           // Código a ejecutar si la condición se cumple
           this.router.navigate(['/bienvenidopresidente', this.usuario.nombre]); 
-          console.log('El usuario es persona');
-        }
-      }
+      console.log('El usuario es persona');
     }
       
   }
