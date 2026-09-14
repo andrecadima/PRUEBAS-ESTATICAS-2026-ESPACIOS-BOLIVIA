@@ -14,7 +14,7 @@ export class EventoService
   private usuarioRepository;
   private espacioRepository;
 
-  constructor(private dataSource: DataSource) 
+  constructor(private readonly dataSource: DataSource)
   {
     this.eventoRepository = this.dataSource.getRepository(EventoEntity);
     this.usuarioRepository = this.dataSource.getRepository(UsuarioEntity);
