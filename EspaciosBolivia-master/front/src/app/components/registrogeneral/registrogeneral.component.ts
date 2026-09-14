@@ -23,7 +23,7 @@ export class RegistrogeneralComponent
   mensajeError = '';
   passwordVisible: boolean = false; 
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private readonly router: Router) {}
   // Método para alternar la visibilidad de la contraseña
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
