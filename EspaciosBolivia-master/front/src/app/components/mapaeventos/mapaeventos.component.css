@@ -214,7 +214,10 @@ header {
 #map {
     margin: 20px auto; /* Centra el mapa horizontalmente y añade espacio superior/inferior */
     border: 2px solid white; /* Añade un borde blanco alrededor del mapa */
-    margin: 0px 27px;
+    margin-top: 0;
+    margin-right: 27px;
+    margin-bottom: 0;
+    margin-left: 27px;
     position: absolute;
     right: 700px;
 }
