@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             fetch('https://api.example.com/events') // Cambia esta URL por la de tu API
                 .then(response => response.json())
                 .then(data => {
-                    var events = data.map(event => {
+                    let events = data.map(event => {
                         return {
                             title: event.title,
                             start: event.start,
