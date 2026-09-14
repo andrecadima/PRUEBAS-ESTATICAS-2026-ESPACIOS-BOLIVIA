@@ -34,7 +34,7 @@ export class EspacioController
   {
     try 
     {
-      return this.espacioService.getespacios();
+      return await this.espacioService.getespacios();
     } catch (error) 
     {
       if (error instanceof TimeoutError) 
