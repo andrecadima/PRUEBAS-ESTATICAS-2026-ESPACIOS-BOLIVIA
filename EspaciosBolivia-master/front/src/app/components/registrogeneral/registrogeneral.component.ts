@@ -56,10 +56,7 @@ export class RegistrogeneralComponent
             {
               this.router.navigate(['/condiciones']);
             }else{ 
-              if (this.tipousuario === 'Admin') 
-              {
-                this.router.navigate(['/condiciones']);
-              }
+               this.router.navigate(['/condiciones']);
             }
           }
         }; 
