@@ -4,9 +4,13 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { APP_ROUTES } from './app/app-routing.module';
 
-bootstrapApplication(AppComponent, {
+try {
+  await bootstrapApplication(AppComponent, {
   providers: [
     provideHttpClient(), // Proveedor para HttpClient
     provideRouter(APP_ROUTES), // Configuración de rutas
   ],
-}).catch((err) => console.error(err));
+  });
+} catch (err) {
+  console.error(err);
+}
