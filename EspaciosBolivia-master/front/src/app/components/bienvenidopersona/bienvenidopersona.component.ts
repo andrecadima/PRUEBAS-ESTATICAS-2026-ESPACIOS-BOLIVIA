@@ -38,7 +38,7 @@ export class BienvenidopersonaComponent implements OnInit {
     private apiService: ApiService,
     private route: ActivatedRoute,
     private router: Router,
-    private authservice: AuthService
+    private readonly authservice: AuthService
   ) {}
 
   ngOnInit(): void {
