@@ -15,7 +15,7 @@ function manejoErrorDeCargaDBNube(error: any, mensaje: string){
 @Controller('peticiones')
 export class PeticionesController 
 {
-    private usercontrol;
+    private readonly usercontrol;
     constructor(private readonly peticionesService: PeticionesService, private dataSource: DataSource) 
     {
         this.usercontrol = this.dataSource.getRepository(UsuarioEntity);
