@@ -13,7 +13,7 @@ export class AuthService {
 
   private apiUrl = 'http://localhost:3000/usuario'; // Tu API base
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   // Método para iniciar sesión
   login(usuario: { nombre: string, contrasena: string, tipousuario: string }): Observable<any> {
