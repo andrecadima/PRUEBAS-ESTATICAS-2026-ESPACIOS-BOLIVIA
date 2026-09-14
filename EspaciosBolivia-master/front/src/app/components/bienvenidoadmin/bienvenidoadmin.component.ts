@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { RouterModule, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-bienvenidoadmin',
@@ -38,7 +37,7 @@ export class BienvenidoadminComponent implements OnInit {
   isDropdownOpen= false; // Estado para el dropdown
 
   constructor(
-    private apiService: ApiService,
+    private readonly apiService: ApiService,
     private route: ActivatedRoute,
     private router: Router,
     private authservice: AuthService
