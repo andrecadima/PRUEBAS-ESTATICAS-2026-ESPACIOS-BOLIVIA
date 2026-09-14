@@ -56,7 +56,6 @@
     border: none; 
     color: white; 
     font-size: 16px;
-    /*padding: 15px;*/
   }
   
 
@@ -151,7 +150,7 @@
   /* Botón de logout */
   .logout-btn {
     display: block;
-    background-color: #ff4b4b;
+    background-color: #b91c1c;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -290,7 +289,6 @@ p{
     color: rgb(0, 0, 0);
     font-size: 18px;
     margin: 10px 0;
-    text-align: center;
     border-color: #ffffff;
     background-color: rgb(237, 240, 243);
     width: 570px;
