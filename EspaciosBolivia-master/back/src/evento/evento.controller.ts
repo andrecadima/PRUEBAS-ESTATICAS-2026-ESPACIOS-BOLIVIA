@@ -16,11 +16,11 @@ import { EventoEntity } from './evento.entity';
 export class EventoController 
 {
 
-   private usuariocontrol;
-   private espaciocontrol;
+    private readonly usuariocontrol;
+    private readonly espaciocontrol;
    private eventocontrol;
    
-   constructor(private readonly eventoservice: EventoService, private dataSource: DataSource)
+   constructor(private readonly eventoservice: EventoService, private readonly dataSource: DataSource)
    {
       this.usuariocontrol = this.dataSource.getRepository(UsuarioEntity);
       this.espaciocontrol = this.dataSource.getRepository(EspacioEntity);
