@@ -36,25 +36,15 @@ export class IniciosesionComponent {
     this.authService.login(usuario).subscribe(
       (respuesta) => {
         console.log('Inicio de sesión exitoso:', respuesta);
-        if (this.tipousuario === 'Presidente OTB') 
-          {
-            this.router.navigate(['/bienvenidopresidente', this.nombre]);
-          } else { 
-            if (this.tipousuario === 'Empresa') 
-            {
-              this.router.navigate(['/bienvenidopresidente',  this.nombre]);
-            }else {
-              if (this.tipousuario === 'Usuario') 
-              {
-                this.router.navigate(['/bienvenidopersona', this.nombre]);
-              }else{ 
-                if (this.tipousuario === 'Admin') 
-                {
-                  this.router.navigate(['/bienvenidoadmin',this.nombre]);
-                }
-              }
-            }
-          }; 
+        if (this.tipousuario === 'Presidente OTB') {
+          this.router.navigate(['/bienvenidopresidente', this.nombre]);
+        } else if (this.tipousuario === 'Empresa') {
+          this.router.navigate(['/bienvenidopresidente', this.nombre]);
+        } else if (this.tipousuario === 'Usuario') {
+          this.router.navigate(['/bienvenidopersona', this.nombre]);
+        } else if (this.tipousuario === 'Admin') {
+          this.router.navigate(['/bienvenidoadmin', this.nombre]);
+        }
 
       },
       (error) => {
