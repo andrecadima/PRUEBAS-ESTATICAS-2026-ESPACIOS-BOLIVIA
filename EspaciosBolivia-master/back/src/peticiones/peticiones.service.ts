@@ -12,7 +12,7 @@ export class PeticionesService
     private usuarioRepository;
     private eventoRepository;
 
-    constructor(private dataSource: DataSource) 
+    constructor(private readonly dataSource: DataSource) 
     {
         this.peticionRepository = this.dataSource.getRepository(PeticionesEntity);
         this.usuarioRepository = this.dataSource.getRepository(UsuarioEntity);
