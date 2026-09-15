@@ -121,12 +121,14 @@ export class BienvenidoadminComponent implements OnInit {
     this.eventoSeleccionado = evento;
   
     // Check if 'evento.usuario' exists before setting usuarioSeleccionado
-    if (evento.usuario && evento.usuario.nombre) {
+    const nombreUsuario = evento.usuario?.nombre;
+    if (nombreUsuario) {
       this.usuarioSeleccionado = evento.usuario;
-      console.log("Abriendo el modal para el usuario:", this.usuarioSeleccionado.nombre);
+      console.log("Abriendo el modal para el usuario:", nombreUsuario);
     } else {
       console.error('No se ha encontrado un usuario válido para este evento.');
     }
+
   }
  
   
