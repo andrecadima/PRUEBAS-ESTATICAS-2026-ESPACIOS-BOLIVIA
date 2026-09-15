@@ -12,7 +12,7 @@ export class EventoService
 
   private eventoRepository;
   private usuarioRepository;
-  private espacioRepository;
+  private readonly espacioRepository;
 
   constructor(private dataSource: DataSource) 
   {
