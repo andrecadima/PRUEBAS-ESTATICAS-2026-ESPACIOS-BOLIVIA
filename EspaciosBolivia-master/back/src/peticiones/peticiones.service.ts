@@ -10,7 +10,7 @@ export class PeticionesService
 {
     private peticionRepository;
     private usuarioRepository;
-    private eventoRepository;
+    private readonly eventoRepository;
 
     constructor(private readonly dataSource: DataSource) 
     {
