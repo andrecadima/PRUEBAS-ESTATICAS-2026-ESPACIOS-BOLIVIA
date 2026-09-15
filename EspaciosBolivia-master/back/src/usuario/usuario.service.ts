@@ -9,7 +9,7 @@ export class UsuarioService
 {
   private usuarioRepository;
 
-  constructor(private dataSource: DataSource, private readonly jwtService: JwtService)
+  constructor(private readonly dataSource: DataSource, private readonly jwtService: JwtService)
   {
     this.usuarioRepository = this.dataSource.getRepository(UsuarioEntity);
   }
