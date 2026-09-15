@@ -94,7 +94,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "https://fonts.cdnfonts.com/css/trebuchet-ms-3"
             ],
             "scripts": []
           }

@@ -57,7 +57,7 @@ h1, h2 {
 }
 
 .error p {
-  font-family: 'Trebuchet MS';
+  font-family: 'Trebuchet MS', sans-serif;;
   font-size: 20px;
 }
 
