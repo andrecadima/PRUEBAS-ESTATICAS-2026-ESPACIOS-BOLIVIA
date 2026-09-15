@@ -39,7 +39,7 @@ export class BienvenidoadminComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private route: ActivatedRoute,
+    private readonly route: ActivatedRoute,
     private readonly router: Router,
     private readonly authservice: AuthService
   ) {}
