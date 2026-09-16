@@ -10,7 +10,7 @@ import { TimeoutError } from 'rxjs';
 export class CalificacionController 
 {
    
-   private eventoRepository;
+   private readonly eventoRepository;
    constructor(private readonly calificacionservice: CalificacionService,private readonly dataSource: DataSource)
    {
       
