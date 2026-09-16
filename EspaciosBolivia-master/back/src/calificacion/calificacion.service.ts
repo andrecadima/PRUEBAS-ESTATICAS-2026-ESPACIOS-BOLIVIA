@@ -10,7 +10,7 @@ export class CalificacionService
 
     private calificacionRepository;
  
-    private eventoRepository;
+    private readonly eventoRepository;
 
     constructor(private readonly dataSource: DataSource) 
     {
