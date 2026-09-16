@@ -4,7 +4,7 @@ import { ApiService } from '../../services/api.service';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { RouterModule, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bienvenidoadmin',
