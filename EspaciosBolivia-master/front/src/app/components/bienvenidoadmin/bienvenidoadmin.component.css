@@ -5,7 +5,6 @@
 body {
   background-color: #000; 
   color: #fff;
-  font-family:'Trebuchet MS';
   margin: 0;
   padding: 0;
 }
@@ -20,7 +19,6 @@ body {
 
 h1, h2 {
   font-size: 2rem;
-  font-family: 'Trebuchet MS';
   margin-bottom: 20px;
   color: #fff;
   text-align: left;
@@ -29,7 +27,6 @@ h1, h2 {
 
 .boton {
   padding: 10px 20px;
-  font-family: 'Trebuchet MS';
   font-size: 1.3rem;
   background-color: #008cff;
   color: #ffffff; 
@@ -49,7 +46,6 @@ h1, h2 {
 
 .error {
   color: #0077ff; 
-  font-family: 'Trebuchet MS';
   font-weight: bold;
   margin-top: 10px;
   text-align: left;
@@ -57,7 +53,6 @@ h1, h2 {
 }
 
 .error p {
-  font-family: 'Trebuchet MS';
   font-size: 20px;
 }
 
