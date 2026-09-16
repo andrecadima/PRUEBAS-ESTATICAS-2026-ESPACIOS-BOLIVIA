@@ -12,7 +12,7 @@ export class CalificacionService
  
     private eventoRepository;
 
-    constructor(private dataSource: DataSource) 
+    constructor(private readonly dataSource: DataSource) 
     {
         this.calificacionRepository = this.dataSource.getRepository(CalificacionEntity);
        
