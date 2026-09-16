@@ -10,8 +10,6 @@ import { EventoDtoU } from './dto/evento.dtou';
 import { EventoDtoF } from './dto/evento.dtof';
 import { EventoEntity } from './evento.entity';
 
-//import { BadRequestException, Body, Controller, Delete, Get, InternalServerErrorException, Patch, Post, Put, RequestTimeoutException} from '@nestjs/common';
-
 @Controller('evento')
 export class EventoController 
 {
