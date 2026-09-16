@@ -23,7 +23,7 @@ export class RegistrogeneralComponent
   mensajeError = '';
   passwordVisible: boolean = false; 
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private readonly router: Router) {}
   // Método para alternar la visibilidad de la contraseña
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
@@ -44,23 +44,12 @@ export class RegistrogeneralComponent
       (respuesta) => {
 
         console.log('Registro de usuario exitoso:', respuesta);
-        if (this.tipousuario === 'Presidente OTB') 
-        {
+        if (['Presidente OTB', 'Empresa', 'Usuario', 'Admin'].includes(this.tipousuario)) {
           this.router.navigate(['/condiciones']);
         } else { 
-          if (this.tipousuario === 'Empresa') 
+          if (this.tipousuario === 'Empresa' || this.tipousuario === 'Admin' || this.tipousuario === 'Usuario') 
           {
             this.router.navigate(['/condiciones']);
-          }else {
-            if (this.tipousuario === 'Usuario') 
-            {
-              this.router.navigate(['/condiciones']);
-            }else{ 
-              if (this.tipousuario === 'Admin') 
-              {
-                this.router.navigate(['/condiciones']);
-              }
-            }
           }
         }; 
       },
@@ -71,4 +60,4 @@ export class RegistrogeneralComponent
       }
     );
   }
-} 
+}

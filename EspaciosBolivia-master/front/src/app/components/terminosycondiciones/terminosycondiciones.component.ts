@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./terminosycondiciones.component.css']
 })
 export class TerminosycondicionesComponent {
-constructor(private router: Router) {}
+constructor(private readonly router: Router) {}
 
 goToInicioSesion() {
     this.router.navigate(['/iniciosesion']);
