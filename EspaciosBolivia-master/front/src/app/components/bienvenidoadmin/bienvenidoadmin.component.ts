@@ -132,7 +132,6 @@ export class BienvenidoadminComponent implements OnInit {
   
   cambiarEstado() {
     if (this.eventoSeleccionado) {
-      // Normalizamos estado, convirtiendo todo a minúsculas para asegurar la consistencia
       const nuevoEstado = this.eventoSeleccionado.estado.toLowerCase() === 'confirmado' ? 'rechazado' : 'confirmado';
   
       console.log(`Cambiando el estado del evento ${this.eventoSeleccionado.nombre} a ${nuevoEstado}`);
