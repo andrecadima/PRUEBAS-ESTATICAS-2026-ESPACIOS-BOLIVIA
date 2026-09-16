@@ -11,7 +11,7 @@ export class CalificacionController
 {
    
    private eventoRepository;
-   constructor(private readonly calificacionservice: CalificacionService,private dataSource: DataSource)
+   constructor(private readonly calificacionservice: CalificacionService,private readonly dataSource: DataSource)
    {
       
       this.eventoRepository=this.dataSource.getRepository(EventoEntity);
