@@ -10,7 +10,7 @@ export class EspacioService {
   private espacioRepository;
   private eventoRepository;
 
-  constructor(private dataSource: DataSource) 
+  constructor(private readonly dataSource: DataSource) 
   {
     this.espacioRepository = this.dataSource.getRepository(EspacioEntity);
     this.eventoRepository = this.dataSource.getRepository(EventoEntity);
