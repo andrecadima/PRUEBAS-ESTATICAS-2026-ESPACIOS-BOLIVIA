@@ -8,11 +8,11 @@ import { EventoEntity } from 'src/evento/evento.entity';
 @Injectable()
 export class PeticionesService 
 {
-     private readonly peticionRepository;
-     private readonly usuarioRepository;
-    private eventoRepository;
+    private peticionRepository;
+    private usuarioRepository;
+    private readonly eventoRepository;
 
-    constructor(private dataSource: DataSource) 
+    constructor(private readonly dataSource: DataSource) 
     {
         this.peticionRepository = this.dataSource.getRepository(PeticionesEntity);
         this.usuarioRepository = this.dataSource.getRepository(UsuarioEntity);
