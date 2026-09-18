@@ -1,4 +1,4 @@
-import { Body, Controller, Get, InternalServerErrorException, Patch, Post, RequestTimeoutException } from '@nestjs/common';
+import { Body, Controller, Get, InternalServerErrorException, Post, RequestTimeoutException } from '@nestjs/common';
 import { EspacioDto } from './dto/espacio.dto';
 import { EspacioService } from './espacio.service';
 import { TimeoutError } from 'rxjs';
@@ -66,7 +66,7 @@ export class EspacioController
       }
       return {
         message: 'Ocurrió un error al buscar los espacios disponibles',
-        error: error.message,};
+        };
     }
   }
 }
