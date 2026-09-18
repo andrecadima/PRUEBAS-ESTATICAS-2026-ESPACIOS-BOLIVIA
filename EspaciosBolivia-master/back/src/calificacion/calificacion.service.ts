@@ -2,7 +2,6 @@ import { BadRequestException, Injectable, NotFoundException } from '@nestjs/comm
 import { CalificacionEntity } from './calificacion.entity';
 import { CalificacionDto } from './dto/calificacion.dto';
 import { DataSource } from 'typeorm';
-import { UsuarioEntity } from 'src/usuario/usuario.entity';
 import { EventoEntity } from 'src/evento/evento.entity';
 @Injectable()
 export class CalificacionService
