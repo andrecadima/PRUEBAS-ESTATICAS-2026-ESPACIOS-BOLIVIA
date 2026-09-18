@@ -82,11 +82,7 @@ export class CalificacionController
 
       @Get('calificaciones-desc')
       async calificacionesDesc() {
-         try {
-            return await this.calificacionservice.calificacionesOrdenadasDesc();
-         } catch (error) {
-            throw new InternalServerErrorException('Error al obtener las calificaciones ordenadas');
-         }
+         return await this.calificacionservice.calificacionesOrdenadasDesc();
       }
       @Get('promedio-evento')
       async promedioEvento(@Body() body:{nomevento:string})
