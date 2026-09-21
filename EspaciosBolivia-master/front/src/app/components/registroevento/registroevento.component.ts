@@ -1,10 +1,9 @@
 import { Component, OnInit} from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
-import { RouterModule , Router} from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms'; // Importar FormsModule para [(ngModel)]
 import { AuthService } from '../../services/auth.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-registroevento',
