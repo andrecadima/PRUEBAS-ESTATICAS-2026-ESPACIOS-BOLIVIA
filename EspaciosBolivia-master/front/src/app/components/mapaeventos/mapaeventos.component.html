@@ -20,11 +20,13 @@
                   </span>
                 </a>
                 <!-- Dropdown con la información -->
-                <div class="user-menu" (click)="toggleDropdown()">
-                  <i class="fa fa-caret-down"></i>
-                </div>
+                <button class="user-menu" type="button" (click)="toggleDropdown()"
+                  aria-label="Menú de usuario" [attr.aria-expanded]="isDropdownOpen"
+                  aria-controls="mapaeventos-user-dropdown">
+                  <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </button>
                 
-                <div class="user-dropdown" [class.open]="isDropdownOpen">
+                <div id="mapaeventos-user-dropdown" class="user-dropdown" [class.open]="isDropdownOpen">
                   <ul>
                     <li><a (click)="logout()">Cerrar sesión</a></li>
                   </ul>
