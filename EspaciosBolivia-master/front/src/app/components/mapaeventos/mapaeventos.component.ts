@@ -28,7 +28,7 @@ export class MapaeventosComponent implements OnInit {
 
   tipoNombre: string='';
   // Inyecta ActivatedRoute para acceder a los parámetros de la URL
-  constructor( private apiService: ApiService, private sanitizer: DomSanitizer, private router: Router, private route: ActivatedRoute) {}
+  constructor( private readonly apiService: ApiService, private readonly sanitizer: DomSanitizer, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.usuario.nombre= this.route.snapshot.paramMap.get('User'); //para poner el nombre usuario
@@ -93,18 +93,14 @@ export class MapaeventosComponent implements OnInit {
       // Código a ejecutar si la condición se cumple
       this.router.navigate(['/bienvenidoadmin', this.usuario.nombre]); 
       console.log('El usuario es administrador');
-    }else{
-      if (this.tipoNombre === 'persona') {
+    } else if (this.tipoNombre === 'persona') {
         // Código a ejecutar si la condición se cumple
         this.router.navigate(['/bienvenidopersona', this.usuario.nombre]); 
         console.log('El usuario es persona');
-      }else{
-        if (this.tipoNombre === 'presiempresa') {
+    } else if (this.tipoNombre === 'presiempresa') {
           // Código a ejecutar si la condición se cumple
           this.router.navigate(['/bienvenidopresidente', this.usuario.nombre]); 
-          console.log('El usuario es persona');
-        }
-      }
+      console.log('El usuario es persona');
     }
       
   }

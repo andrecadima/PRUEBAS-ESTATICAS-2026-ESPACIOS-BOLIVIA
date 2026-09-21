@@ -62,7 +62,7 @@
     <!-- Modal -->
     <div *ngIf="modalAbierto" class="modal">
         <div class="modal-content">
-            <span class="close" (click)="cerrarModal()">&times;</span>
+            <span class="close" role="button" tabindex="0" aria-label="Cerrar" (click)="cerrarModal()" (keydown.enter)="cerrarModal()">&times;</span>
             <h2>Detalles del Evento</h2>
 
             <!-- Confirmar/Rechazar Evento -->
