@@ -113,7 +113,6 @@ header {
 
 
 .evento-card img {
-    /*max-width: 100%;*/
     width: 100%; /* O un valor fijo, como '300px' */
     height: 200px; /* Altura fija */
     object-fit: cover; /* Ajusta la imagen sin distorsionar */
