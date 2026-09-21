@@ -32,18 +32,7 @@ export class EspacioController
   @Get()
   async getespacios()
   {
-    try 
-    {
-      return this.espacioService.getespacios();
-    } catch (error) 
-    {
-      if (error instanceof TimeoutError) 
-      {  // Verifica si el error es por tiempo de espera
-        throw new RequestTimeoutException('La conexión con la base de datos está tardando demasiado. Intenta más tarde.');
-      }
-    // Si es otro tipo de error, lanzamos un error interno
-      throw new InternalServerErrorException('Hubo un problema. Intenta más tarde.');
-    }
+    return await this.espacioService.getespacios();
   }
 
   //Mostrar Espacios Disponibles
