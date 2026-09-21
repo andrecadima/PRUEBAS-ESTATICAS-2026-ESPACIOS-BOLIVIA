@@ -61,7 +61,7 @@
       <!-- Modal para comentar y puntuar -->
       <div *ngIf="modalAbierto" class="modal">
         <div class="modal-content">
-          <span (click)="cerrarModal()" class="close">&times;</span>
+          <button type="button" (click)="cerrarModal()" class="close" aria-label="Cerrar ventana de comentarios">&times;</button>
           <h2>Comentar sobre el evento</h2>
 
           <textarea [(ngModel)]="comentario" placeholder="Escribe tu comentario aquí..."></textarea>
