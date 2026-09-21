@@ -23,7 +23,7 @@ export class BienvenidoregistroComponent implements OnInit {
   isDropdownOpen= false; // Estado para el dropdown
   tipo: string = 'presiempresa';
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router) {}
+  constructor(private apiService: ApiService, private readonly route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.usuario.nombre = this.route.snapshot.paramMap.get('User'); // Obtén el nombre desde la URL
