@@ -35,7 +35,7 @@ export class BienvenidopersonaComponent implements OnInit {
   comentario: string = '';
 
   constructor(
-    private apiService: ApiService,
+    private readonly apiService: ApiService,
     private readonly route: ActivatedRoute,
     private router: Router,
     private readonly authservice: AuthService
