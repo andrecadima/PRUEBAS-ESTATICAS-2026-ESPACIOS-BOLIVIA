@@ -382,7 +382,7 @@ header {
   }
   
   .modal-content button {
-    background-color: #4caf50; /* Verde moderno */
+    background-color: #2e7d32; /* Verde con contraste suficiente para texto blanco */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -394,7 +394,7 @@ header {
   }
   
   .modal-content button:hover {
-    background-color: #45a049; /* Más oscuro al pasar el cursor */
+    background-color: #1b5e20; /* Mantiene el contraste al pasar el cursor */
   }
   
     /* Estilo base del botón */
