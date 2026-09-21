@@ -91,7 +91,6 @@ header {
     color: white;
     text-align: left; /* Alinea el texto a la izquierda por defecto */
     margin-top: 20px;
-    position: relative;
     top: 50px;
     left: 80px;
 }
