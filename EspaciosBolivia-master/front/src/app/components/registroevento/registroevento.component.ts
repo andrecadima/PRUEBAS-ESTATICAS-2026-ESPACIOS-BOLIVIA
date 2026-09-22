@@ -1,10 +1,8 @@
 import { Component, OnInit} from '@angular/core';
-import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
-import { RouterModule , Router} from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms'; // Importar FormsModule para [(ngModel)]
 import { AuthService } from '../../services/auth.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-registroevento',
@@ -36,7 +34,7 @@ export class RegistroeventoComponent implements OnInit {
   isDropdownOpen= false;
 
 
-  constructor(private authService: AuthService, private readonly router: Router, private route: ActivatedRoute) {}
+  constructor(private readonly authService: AuthService, private readonly router: Router, private readonly route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.usuario.nombre= this.route.snapshot.paramMap.get('User'); //para poner el nombre usuario
