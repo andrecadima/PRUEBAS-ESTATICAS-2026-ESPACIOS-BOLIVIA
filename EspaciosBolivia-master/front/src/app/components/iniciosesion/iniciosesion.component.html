@@ -43,10 +43,10 @@
             <button
               type="button"
               (click)="togglePasswordVisibility()"
-              aria-label="Mostrar/Ocultar contraseña"
               class="toggle-password"
             >
-              {{ passwordVisible ? '🙈' : '👁️' }} <!-- Cambia el ícono dinámicamente -->
+              <span aria-hidden="true">{{ passwordVisible ? '🙈' : '👁️' }}</span>
+              {{ passwordVisible ? 'Ocultar contraseña' : 'Mostrar contraseña' }}
             </button>
           </div>
           
