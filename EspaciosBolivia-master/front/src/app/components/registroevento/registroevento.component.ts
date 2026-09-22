@@ -34,7 +34,7 @@ export class RegistroeventoComponent implements OnInit {
   isDropdownOpen= false;
 
 
-  constructor(private readonly authService: AuthService, private router: Router, private readonly route: ActivatedRoute) {}
+  constructor(private readonly authService: AuthService, private readonly router: Router, private readonly route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.usuario.nombre= this.route.snapshot.paramMap.get('User'); //para poner el nombre usuario
