@@ -36,8 +36,9 @@
                     [(ngModel)]="contrasena"
                     placeholder="Escribe tu password" 
                     required />
-                <button type="button" (click)="togglePasswordVisibility()" aria-label="Mostrar/Ocultar contraseña">
-                    {{ passwordVisible ? '🙈' : '👁️' }}
+                <button type="button" (click)="togglePasswordVisibility()">
+                    <span aria-hidden="true">{{ passwordVisible ? '🙈' : '👁️' }}</span>
+                    {{ passwordVisible ? 'Ocultar contraseña' : 'Mostrar contraseña' }}
                 </button>
             </div>
             
