@@ -1,6 +1,0 @@
-projectKey=PRUEBAS-ESTATICAS-2026-ESPACIOS-BOLIVIA
-serverUrl=http://localhost:9000
-serverVersion=26.3.0.120487
-dashboardUrl=http://localhost:9000/dashboard?id=PRUEBAS-ESTATICAS-2026-ESPACIOS-BOLIVIA
-ceTaskId=aedc9198-528f-44cb-9d95-a66d090d8a7c
-ceTaskUrl=http://localhost:9000/api/ce/task?id=aedc9198-528f-44cb-9d95-a66d090d8a7c

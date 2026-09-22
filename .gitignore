@@ -1,3 +1,4 @@
 # Local credentials (never commit)
 credentials.txt
 sonar-project.properties
+.scannerwork/
