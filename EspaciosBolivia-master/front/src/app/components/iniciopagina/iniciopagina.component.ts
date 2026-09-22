@@ -16,7 +16,7 @@ export class IniciopaginaComponent implements OnInit {
   eventos: any[] = [];
   error: boolean = false;
 
-  constructor(private apiService: ApiService) {}
+  constructor(private readonly apiService: ApiService) {}
 
   ngOnInit(): void {
     this.loadEventos();
