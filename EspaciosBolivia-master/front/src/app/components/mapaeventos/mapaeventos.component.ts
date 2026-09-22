@@ -28,7 +28,7 @@ export class MapaeventosComponent implements OnInit {
 
   tipoNombre: string='';
   // Inyecta ActivatedRoute para acceder a los parámetros de la URL
-  constructor( private readonly apiService: ApiService, private readonly sanitizer: DomSanitizer, private router: Router, private route: ActivatedRoute) {}
+  constructor( private readonly apiService: ApiService, private readonly sanitizer: DomSanitizer, private readonly router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.usuario.nombre= this.route.snapshot.paramMap.get('User'); //para poner el nombre usuario

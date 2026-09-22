@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { bootstrapApplication, BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AuthService } from './services/auth.service';
@@ -13,10 +13,6 @@ import { MapaeventosModule } from './mapaeventos/mapaeventos.module';
 import { VerEventoPresiComponent } from './components/ver-evento-presi/ver-evento-presi.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    VerEventoPresiComponent  // Asegúrate de declarar tu componente aquí
-  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -24,10 +20,12 @@ import { VerEventoPresiComponent } from './components/ver-evento-presi/ver-event
     BrowserAnimationsModule,
     DropdownModule,
     OrderListModule,
-    MapaeventosModule,
-    FormsModule
+    VerEventoPresiComponent
   ],
-  providers: [AuthService],
-  bootstrap: [AppComponent]
+  providers: [AuthService]
 })
 export class AppModule {}
+
+bootstrapApplication(AppComponent, {
+  providers: [AuthService]
+});
