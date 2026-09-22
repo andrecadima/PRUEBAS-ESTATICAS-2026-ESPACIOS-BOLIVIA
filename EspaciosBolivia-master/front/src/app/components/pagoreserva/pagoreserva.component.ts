@@ -18,7 +18,7 @@ export class PagoreservaComponent  implements OnInit{
   }//anadi una var usuario
   isDropdownOpen= false; // Estado para el dropdown
   
-  constructor(private route: ActivatedRoute, private readonly router: Router){}
+  constructor(private readonly route: ActivatedRoute, private readonly router: Router){}
 
   ngOnInit(): void {
     this.usuario.nombre = this.route.snapshot.paramMap.get('User'); // Obtén el nombre desde la URL

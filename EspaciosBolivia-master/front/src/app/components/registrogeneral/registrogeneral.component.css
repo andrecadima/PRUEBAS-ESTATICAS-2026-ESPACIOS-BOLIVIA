@@ -140,7 +140,12 @@ h1 {
 
 .inputGroup input {
     width: 100%;
-    padding-right: 40px; /* Espacio para el botón de ojo */
+    padding-right: 40px;
+}
+
+.inputGroup #contrasena {
+    box-sizing: border-box;
+    padding-right: 155px; /* Espacio para el texto del botón */
 }
 
 label {
@@ -167,14 +172,18 @@ button[type="button"] {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 18px;
-    color: #ecf0f1;
-    outline: none;
+    font-size: 14px;
+    color: #1f2937;
     transition: color 0.3s;
 }
 
 button[type="button"]:hover {
-    color: #f1c40f;
+    color: #5b3c00;
+}
+
+button[type="button"]:focus-visible {
+    outline: 2px solid #1f2937;
+    outline-offset: 2px;
 }
 
 /* Tipo de usuario */

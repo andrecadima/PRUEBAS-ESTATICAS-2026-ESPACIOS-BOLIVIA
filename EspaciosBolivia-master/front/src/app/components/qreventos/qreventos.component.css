@@ -128,6 +128,30 @@ body {
     cursor: pointer;
   }
   
+  li.user-menu > button.user-menu {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+  }
+
+  li.user-menu > button.user-menu:hover {
+    background: transparent;
+    color: inherit;
+    transform: none;
+    text-decoration: none;
+  }
+
+  li.user-menu > button.user-menu:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
   /* Dropdown oculto por defecto */
   .user-dropdown {
     display: none; /* Initially hidden */
@@ -150,7 +174,7 @@ body {
   /* Botón de logout */
   .logout-btn {
     display: block;
-    background-color: #ff4b4b;
+    background-color: #b91c1c;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -160,7 +184,7 @@ body {
   }
   
   .logout-btn:hover {
-    background-color: #e03d3d;
+  background-color: #991b1b;
   }
   
 

@@ -68,7 +68,7 @@ header {
 }
 
 .boton-registro {
-  background-color: #007bff;
+  background-color: #0056b3;
   color: white;
   border-radius: 5px;
   padding: 8px 20px;
@@ -111,9 +111,11 @@ h1, h3 {
 /* Formularios e inputs */
 .inputGroup {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 10px;
+  width: 100%;
   position: relative;
 }
 
@@ -139,7 +141,6 @@ label {
   width: 100%;
   font-size: 14px;
   border-radius: 6px;
-  border: 1px solid #ccc;
 }
 
 #nombre:focus,
@@ -149,15 +150,6 @@ label {
 }
 
 /* Botón de mostrar/ocultar contraseña */
-/* Contenedor de los inputs y el botón de ojo */
-.inputGroup {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  position: relative; /* Asegura que el botón de ojo esté dentro del contenedor */
-}
-
 /* Input de contraseña */
 #password {
   width: 95%;
@@ -168,23 +160,28 @@ label {
   background-color: #2c3e50;
   color: #ecf0f1;
   transition: border-color 0.3s ease;
-  padding-right: 40px; /* Deja espacio a la derecha para el botón de ojo */
+  box-sizing: border-box;
+  padding-right: 165px; /* Espacio para el texto del botón */
 }
 
 /* Estilo del botón de ojo */
 button[type="button"] {
   position: absolute;
-  left: 577px;
-  right: 10px; /* Alineación con el borde derecho del input */
+  right: 6%; /* Alineación con el borde derecho del input */
   top: 40px; /* Centra verticalmente */
   transform: translateY(-50%); /* Ajuste fino de la posición */
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
   color: #ecf0f1;
-  outline: none;
+  white-space: nowrap;
   transition: color 0.3s;
+}
+
+button[type="button"]:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 /* Hover del botón de ojo */
