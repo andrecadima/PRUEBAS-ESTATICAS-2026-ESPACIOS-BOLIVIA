@@ -111,9 +111,11 @@ h1, h3 {
 /* Formularios e inputs */
 .inputGroup {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 10px;
+  width: 100%;
   position: relative;
 }
 
@@ -148,15 +150,6 @@ label {
 }
 
 /* Botón de mostrar/ocultar contraseña */
-/* Contenedor de los inputs y el botón de ojo */
-.inputGroup {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  position: relative; /* Asegura que el botón de ojo esté dentro del contenedor */
-}
-
 /* Input de contraseña */
 #password {
   width: 95%;
