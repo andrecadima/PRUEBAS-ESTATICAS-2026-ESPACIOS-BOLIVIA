@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-bienvenidoadmin',
@@ -39,9 +38,9 @@ export class BienvenidoadminComponent implements OnInit {
 
   constructor(
     private readonly apiService: ApiService,
-    private route: ActivatedRoute,
-    private router: Router,
-    private authservice: AuthService
+    private readonly route: ActivatedRoute,
+    private readonly router: Router,
+    private readonly authservice: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -121,7 +120,7 @@ export class BienvenidoadminComponent implements OnInit {
     this.eventoSeleccionado = evento;
   
     // Check if 'evento.usuario' exists before setting usuarioSeleccionado
-    if (evento.usuario && evento.usuario.nombre) {
+    if (evento.usuario?.nombre) {
       this.usuarioSeleccionado = evento.usuario;
       console.log("Abriendo el modal para el usuario:", this.usuarioSeleccionado.nombre);
     } else {
@@ -138,8 +137,8 @@ export class BienvenidoadminComponent implements OnInit {
       this.authservice.cambiarEstadoEvento({
         eventoNombre: this.eventoSeleccionado.nombre,  
         estatus: nuevoEstado  
-      }).subscribe(
-        (response) => {
+      }).subscribe({
+        next: (response) => {
           console.log('Estado del evento cambiado exitosamente', response);
   
           // Actualizamos la lista de eventos para reflejar el cambio
@@ -150,11 +149,11 @@ export class BienvenidoadminComponent implements OnInit {
           this.cerrarModal();
           alert(`Estado del evento cambiado a ${nuevoEstado} correctamente.`);
         },
-        (error) => {
+        error: (error) => {
           console.error('Error al cambiar el estado del evento', error);
           alert('Hubo un problema al cambiar el estado del evento. Intenta más tarde.');
         }
-      );
+      });
     } else {
       console.error('No hay evento seleccionado para cambiar el estado.');
       alert('Por favor, selecciona un evento para cambiar su estado.');
@@ -170,13 +169,13 @@ export class BienvenidoadminComponent implements OnInit {
         eventoNombre: this.eventoSeleccionado.eventoNombre
       };
 
-      this.authservice.cambiarDueno(evento).subscribe(
-        (response) => {
+      this.authservice.cambiarDueno(evento).subscribe({
+        next: (response) => {
           console.log('Dueño cambiado exitosamente', response);
           this.cerrarModal();
           this.loadEventos();
         },
-        (error) => {
+        error: (error) => {
           // Manejo de errores mejorado
           if (error.status === 404) {
             console.error('Usuario o evento no encontrado', error);
@@ -189,7 +188,7 @@ export class BienvenidoadminComponent implements OnInit {
             alert('Hubo un problema al cambiar el dueño. Intenta más tarde.');
           }
         }
-      );
+      });
     } else {
       alert('Por favor, ingrese el nombre del nuevo dueño y el nombre del evento.');
     }
@@ -203,13 +202,13 @@ export class BienvenidoadminComponent implements OnInit {
         espacioNombre: this.eventoSeleccionado.espacioNombre
       };
 
-      this.authservice.cambiarEspacio(evento).subscribe(
-        (response) => {
+      this.authservice.cambiarEspacio(evento).subscribe({
+        next: (response) => {
           console.log('Espacio cambiado exitosamente', response);
           this.cerrarModal();
           this.loadEventos();
         },
-        (error) => {
+        error: (error) => {
           // Manejo de errores mejorado
           if (error.status === 404) {
             console.error('Evento o espacio no encontrado', error);
@@ -219,7 +218,7 @@ export class BienvenidoadminComponent implements OnInit {
             alert('Hubo un problema al cambiar el espacio. Intenta más tarde.');
           }
         }
-      );
+      });
     } else {
       alert('Por favor, ingrese el nombre del evento y el nuevo espacio.');
     }
@@ -244,15 +243,15 @@ export class BienvenidoadminComponent implements OnInit {
     console.log("por esto no da peticiones");
     if (peticion && estatus) {
       peticion.estado = estatus; // Cambia el estado localmente
-      this.authservice.procesarPeticion({ nombreEvento: peticion.nombre, estatus }).subscribe(
-        (response) => {
+      this.authservice.procesarPeticion({ nombreEvento: peticion.nombre, estatus }).subscribe({
+        next: (response) => {
           console.log('Petición procesada exitosamente:', response);
           this.loadEventos(); // Actualiza la lista de eventos tras el cambio
         },
-        (error) => {
+        error: (error) => {
           console.error('Error al procesar la petición:', error);
         }
-      );
+      });
     } else {
       console.error('Datos inválidos para procesar la petición.');
     }

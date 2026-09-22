@@ -73,8 +73,8 @@ export class RegistroeventoComponent implements OnInit {
     };
   
     // Llamada al servicio para registrar el evento
-    this.authService.registrarevento(evento).subscribe(
-      (respuesta) => {
+    this.authService.registrarevento(evento).subscribe({
+      next: (respuesta) => {
         console.log('Registro de evento exitoso:', respuesta);
   
         // Navegación según el tipo de pago
@@ -84,11 +84,11 @@ export class RegistroeventoComponent implements OnInit {
           this.router.navigate(['/pagoreserva', this.usuario.nombre]);
         }
       },
-      (error) => {
+      error: (error) => {
         console.error('Error al registrar evento:', error);
         this.mensajeError = 'Verifica los datos.';
         alert(this.mensajeError);
       }
-    );
+    });
   }
 }

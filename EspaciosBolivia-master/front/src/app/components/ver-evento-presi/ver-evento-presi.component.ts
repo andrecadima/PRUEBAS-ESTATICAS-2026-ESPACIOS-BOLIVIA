@@ -40,7 +40,7 @@ export class VerEventoPresiComponent implements OnInit {
   isDropdownOpen = false;
   error: any;
 
-  constructor(private readonly authservice: AuthService, private apiService: ApiService,  private readonly router: Router, private route: ActivatedRoute){}
+  constructor(private readonly authservice: AuthService, private readonly apiService: ApiService,  private readonly router: Router, private readonly route: ActivatedRoute){}
 
   ngOnInit(): void {
     this.usuario.nombre= this.route.snapshot.paramMap.get('User'); //para poner el nombre usuario
@@ -117,31 +117,30 @@ export class VerEventoPresiComponent implements OnInit {
         img_evento: this.img_evento
     };
 
-      this.authservice.actualizaevento(evento).subscribe
-      (
-        (respuesta) => {
+      this.authservice.actualizaevento(evento).subscribe({
+        next: (respuesta) => {
           console.log('Evento editado correctamente:', respuesta);
         },
-        (error) => {
+        error: (error) => {
           console.error('Error al editar evento:', error);
           this.mensajeError = 'Verifica los datos.';
           alert(this.mensajeError);
         }
-      );
+      });
     }
 
     eliminarEvento() {
       const id_evento = this.eventoSeleccionado.id_evento;
-      this.authservice.eliminarEvento(id_evento).subscribe(
-        (respuesta) => {
+      this.authservice.eliminarEvento(id_evento).subscribe({
+        next: (respuesta) => {
           console.log('Evento eliminado correctamente:', respuesta);
         },
-        (error) => {
+        error: (error) => {
           console.error('Error al eliminar evento:', error);
           this.mensajeError = 'Verifica los datos.';
           alert(this.mensajeError);
         }
-      );
+      });
     }
     
 }

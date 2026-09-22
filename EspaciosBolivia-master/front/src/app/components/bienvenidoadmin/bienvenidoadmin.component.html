@@ -6,7 +6,6 @@
             <li><button  id="inicio"  (click)="goToBienvenido()">INICIO</button></li>
             <li><button  (click)="goToCalendario()">CALENDARIO</button></li>
             <li><button  (click)="goToMapa()">MAPA</button></li>
-            <!--<li><a href="#" (click)="goToMapa()">MAPA</a></li>-->
           </ul>
           <!-- nombre de usuario -->
           <div class="right-section">
@@ -62,7 +61,7 @@
     <!-- Modal -->
     <div *ngIf="modalAbierto" class="modal">
         <div class="modal-content">
-            <span class="close" role="button" tabindex="0" aria-label="Cerrar" (click)="cerrarModal()" (keydown.enter)="cerrarModal()">&times;</span>
+            <button type="button" class="close" aria-label="Cerrar" (click)="cerrarModal()">&times;</button>
             <h2>Detalles del Evento</h2>
 
             <!-- Confirmar/Rechazar Evento -->

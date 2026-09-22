@@ -7,7 +7,7 @@ import { EventoEntity } from 'src/evento/evento.entity';
 export class CalificacionService
 {
 
-    private calificacionRepository;
+    private readonly calificacionRepository;
  
     private readonly eventoRepository;
 

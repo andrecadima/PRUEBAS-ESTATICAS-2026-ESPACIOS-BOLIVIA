@@ -10,15 +10,13 @@ import { EventoDtoU } from './dto/evento.dtou';
 import { EventoDtoF } from './dto/evento.dtof';
 import { EventoEntity } from './evento.entity';
 
-//import { BadRequestException, Body, Controller, Delete, Get, InternalServerErrorException, Patch, Post, Put, RequestTimeoutException} from '@nestjs/common';
-
 @Controller('evento')
 export class EventoController 
 {
 
     private readonly usuariocontrol;
     private readonly espaciocontrol;
-   private eventocontrol;
+   private readonly eventocontrol;
    
    constructor(private readonly eventoservice: EventoService, private readonly dataSource: DataSource)
    {

@@ -33,8 +33,8 @@ export class IniciosesionComponent {
     };
 
     console.log('Tipo de usuario:', this.tipousuario);
-    this.authService.login(usuario).subscribe(
-      (respuesta) => {
+    this.authService.login(usuario).subscribe({
+      next: (respuesta) => {
         console.log('Inicio de sesión exitoso:', respuesta);
         if (this.tipousuario === 'Presidente OTB') {
           this.router.navigate(['/bienvenidopresidente', this.nombre]);
@@ -47,11 +47,11 @@ export class IniciosesionComponent {
         }
 
       },
-      (error) => {
+      error: (error) => {
         console.error('Error al iniciar sesión:', error);
         this.mensajeError = 'Usuario o contraseña incorrectos.';
         alert(this.mensajeError);
       }
-    );    
+    });
   }
 }

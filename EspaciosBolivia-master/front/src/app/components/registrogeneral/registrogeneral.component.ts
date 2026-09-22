@@ -23,7 +23,7 @@ export class RegistrogeneralComponent
   mensajeError = '';
   passwordVisible: boolean = false; 
 
-  constructor(private authService: AuthService, private readonly router: Router) {}
+  constructor(private readonly authService: AuthService, private readonly router: Router) {}
   // Método para alternar la visibilidad de la contraseña
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
@@ -39,25 +39,19 @@ export class RegistrogeneralComponent
       tipousuario: this.tipousuario
     }; 
     
-    this.authService.registrarusuario(usuarios).subscribe
-    (
-      (respuesta) => {
+    this.authService.registrarusuario(usuarios).subscribe({
+      next: (respuesta) => {
 
         console.log('Registro de usuario exitoso:', respuesta);
         if (['Presidente OTB', 'Empresa', 'Usuario', 'Admin'].includes(this.tipousuario)) {
           this.router.navigate(['/condiciones']);
-        } else { 
-          if (this.tipousuario === 'Empresa' || this.tipousuario === 'Admin' || this.tipousuario === 'Usuario') 
-          {
-            this.router.navigate(['/condiciones']);
-          }
-        }; 
+        }
       },
-      (error) => {
+      error: (error) => {
         console.error('Error al registrar usuario:', error);
         this.mensajeError = 'Datos incorrectos.';
         alert(this.mensajeError);
       }
-    );
+    });
   }
 }

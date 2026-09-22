@@ -20,9 +20,9 @@
                   </span>
                 </a>
                 <!-- Dropdown con la información -->
-                <div class="user-menu" role="button" tabindex="0" aria-label="Abrir menú de usuario" (click)="toggleDropdown()" (keydown.enter)="toggleDropdown()">
+                <button type="button" class="user-menu" aria-label="Abrir menú de usuario" (click)="toggleDropdown()">
                   <i class="fa fa-caret-down"></i>
-                </div>
+                </button>
                 
                 <div class="user-dropdown" [class.open]="isDropdownOpen">
                   <ul>

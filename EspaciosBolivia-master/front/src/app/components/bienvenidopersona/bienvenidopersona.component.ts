@@ -114,16 +114,16 @@ export class BienvenidopersonaComponent implements OnInit {
       comentario: this.comentario
     };
 
-    this.authservice.enviarComentario(comentarios).subscribe(
-      (respuesta) => {
+    this.authservice.enviarComentario(comentarios).subscribe({
+      next: (respuesta) => {
         console.log('Comentario enviado exitosamente:', respuesta);
         this.cerrarModal();
       },
-      (error) => {
+      error: (error) => {
         console.error('Error al enviar el comentario:', error);
         alert('Hubo un error al enviar el comentario. Intenta de nuevo.');
       }
-    );
+    });
   }
 
 } 
