@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bienvenidoadmin',
@@ -131,7 +132,6 @@ export class BienvenidoadminComponent implements OnInit {
   
   cambiarEstado() {
     if (this.eventoSeleccionado) {
-      // Normalizamos estado, convirtiendo todo a minúsculas para asegurar la consistencia
       const nuevoEstado = this.eventoSeleccionado.estado.toLowerCase() === 'confirmado' ? 'rechazado' : 'confirmado';
   
       console.log(`Cambiando el estado del evento ${this.eventoSeleccionado.nombre} a ${nuevoEstado}`);
