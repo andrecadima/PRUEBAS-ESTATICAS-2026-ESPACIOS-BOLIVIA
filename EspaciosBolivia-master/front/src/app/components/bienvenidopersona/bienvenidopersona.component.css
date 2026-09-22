@@ -139,6 +139,30 @@ header {
   cursor: pointer;
 }
 
+li.user-menu > button.user-menu {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+}
+
+li.user-menu > button.user-menu:hover {
+  background: transparent;
+  color: inherit;
+  transform: none;
+  text-decoration: none;
+}
+
+li.user-menu > button.user-menu:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
 /* Dropdown oculto por defecto */
 .user-dropdown {
   display: none; /* Initially hidden */
@@ -329,6 +353,19 @@ header {
   .close:hover {
     color: #ff4c4c; /* Resaltar al pasar el cursor */
   }
+
+  .modal-content button.close {
+    background: transparent;
+    border: 0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  .modal-content button.close:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
   
   .modal-content h2 {
     font-size: 1.5rem;
@@ -382,7 +419,7 @@ header {
   }
   
   .modal-content button {
-    background-color: #4caf50; /* Verde moderno */
+    background-color: #2e7d32; /* Verde con contraste suficiente para texto blanco */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -394,12 +431,12 @@ header {
   }
   
   .modal-content button:hover {
-    background-color: #45a049; /* Más oscuro al pasar el cursor */
+    background-color: #1b5e20; /* Mantiene el contraste al pasar el cursor */
   }
   
     /* Estilo base del botón */
     button {
-        background-color: #007bff; /* Color de fondo azul */
+        background-color: #0056b3; /* Azul con contraste suficiente para texto blanco */
         color: white; /* Texto blanco */
         padding: 10px 20px; /* Espaciado interno */
         font-size: 16px; /* Tamaño de fuente */
@@ -413,7 +450,7 @@ header {
 
     /* Estilo cuando el botón está en hover */
     button:hover {
-        background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+        background-color: #003f88; /* Color más oscuro al pasar el mouse */
         transform: translateY(-2px); /* Efecto de elevación */
     }
 

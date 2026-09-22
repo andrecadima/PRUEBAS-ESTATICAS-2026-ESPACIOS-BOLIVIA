@@ -147,6 +147,14 @@ nav {
     display: inline-block;
     cursor: pointer;
   }
+
+  button.user-menu {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    padding: 0;
+  }
   
   .user-link {
     display: flex;
