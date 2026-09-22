@@ -399,7 +399,7 @@ header {
   
     /* Estilo base del botón */
     button {
-        background-color: #007bff; /* Color de fondo azul */
+        background-color: #0056b3; /* Azul con contraste suficiente para texto blanco */
         color: white; /* Texto blanco */
         padding: 10px 20px; /* Espaciado interno */
         font-size: 16px; /* Tamaño de fuente */
@@ -413,7 +413,7 @@ header {
 
     /* Estilo cuando el botón está en hover */
     button:hover {
-        background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+        background-color: #003f88; /* Color más oscuro al pasar el mouse */
         transform: translateY(-2px); /* Efecto de elevación */
     }
 
